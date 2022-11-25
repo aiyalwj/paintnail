@@ -28,7 +28,10 @@ public enum RespBeanEnum {
     LOGIN_ERROR(4003,"账号密码输入错误！","error"),
 
     //用户账号account 不能为空
-    MODIFY_NICKNAME_EMPTY(4004,"用户账号不能为空！","warning");
+    USER_ACCOUNT_EMPTY(4004,"用户账号不能为空！","warning");
+
+    //电话信息 为空
+    //PHONE_INFO_EMPTY("5000","")
 
 
     private final Integer code;
