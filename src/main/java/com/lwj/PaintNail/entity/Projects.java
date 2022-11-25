@@ -23,13 +23,13 @@ public class Projects implements Serializable {
      * 
      */
     @TableField(value = "Manicurist_id")
-    private Integer manicuristId;
+    private String manicuristId;
 
     /**
      * 
      */
     @TableField(value = "Project_cost")
-    private Integer projectCost;
+    private String projectCost;
 
     /**
      * 
@@ -48,6 +48,12 @@ public class Projects implements Serializable {
      */
     @TableField(value = "Project_content")
     private String projectContent;
+
+    /**
+     * 
+     */
+    @TableField(value = "Project_images")
+    private String projectImages;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -69,28 +75,28 @@ public class Projects implements Serializable {
     /**
      * 
      */
-    public Integer getManicuristId() {
+    public String getManicuristId() {
         return manicuristId;
     }
 
     /**
      * 
      */
-    public void setManicuristId(Integer manicuristId) {
+    public void setManicuristId(String manicuristId) {
         this.manicuristId = manicuristId;
     }
 
     /**
      * 
      */
-    public Integer getProjectCost() {
+    public String getProjectCost() {
         return projectCost;
     }
 
     /**
      * 
      */
-    public void setProjectCost(Integer projectCost) {
+    public void setProjectCost(String projectCost) {
         this.projectCost = projectCost;
     }
 
@@ -136,15 +142,30 @@ public class Projects implements Serializable {
         this.projectContent = projectContent;
     }
 
+    /**
+     * 
+     */
+    public String getProjectImages() {
+        return projectImages;
+    }
+
+    /**
+     * 
+     */
+    public void setProjectImages(String projectImages) {
+        this.projectImages = projectImages;
+    }
+
     @Override
     public String toString() {
         return "Projects{" +
                 "projectId='" + projectId + '\'' +
-                ", manicuristId=" + manicuristId +
-                ", projectCost=" + projectCost +
+                ", manicuristId='" + manicuristId + '\'' +
+                ", projectCost='" + projectCost + '\'' +
                 ", projectName='" + projectName + '\'' +
                 ", projectTime=" + projectTime +
                 ", projectContent='" + projectContent + '\'' +
+                ", projectImages='" + projectImages + '\'' +
                 '}';
     }
 }

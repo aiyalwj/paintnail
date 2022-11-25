@@ -16,14 +16,14 @@ public class Report implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Post_id", type = IdType.AUTO)
-    private Integer postId;
+    @TableId(value = "Post_id")
+    private String postId;
 
     /**
      * 
      */
     @TableId(value = "User_id")
-    private Integer userId;
+    private String userId;
 
     /**
      * 
@@ -37,28 +37,28 @@ public class Report implements Serializable {
     /**
      * 
      */
-    public Integer getPostId() {
+    public String getPostId() {
         return postId;
     }
 
     /**
      * 
      */
-    public void setPostId(Integer postId) {
+    public void setPostId(String postId) {
         this.postId = postId;
     }
 
     /**
      * 
      */
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
     /**
      * 
      */
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -79,8 +79,8 @@ public class Report implements Serializable {
     @Override
     public String toString() {
         return "Report{" +
-                "postId=" + postId +
-                ", userId=" + userId +
+                "postId='" + postId + '\'' +
+                ", userId='" + userId + '\'' +
                 ", reportDate=" + reportDate +
                 '}';
     }

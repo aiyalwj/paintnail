@@ -5,7 +5,7 @@
 <mapper namespace="com.lwj.PaintNail.mapper.AdministratorsMapper">
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Administrators">
-            <id property="administratorId" column="Administrator_id" jdbcType="INTEGER"/>
+            <result property="administratorId" column="Administrator_id" jdbcType="VARCHAR"/>
             <result property="administratorName" column="Administrator_name" jdbcType="VARCHAR"/>
             <result property="administratorPwd" column="Administrator_pwd" jdbcType="VARCHAR"/>
     </resultMap>

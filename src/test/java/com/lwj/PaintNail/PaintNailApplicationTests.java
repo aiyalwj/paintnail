@@ -18,7 +18,15 @@ class PaintNailApplicationTests {
         users.setUserPhone("09812345611");
         users.setUserSchool("zju");
 //        usersMapper.deleteUsersByAccount("lwj");
-        usersMapper.updateUsersinfo(users);
+//        usersMapper.updateUsersInfo(users);
         System.out.println(usersMapper.listAll());
     }
+
+
+    @Test
+    void accountIsNull(){
+        Users user=usersMapper.selectUsersByAccount("lwj");
+        System.out.println(user);
+    }
+
 }

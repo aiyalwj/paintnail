@@ -67,6 +67,10 @@
                   <option name="tableName" value="Administrators" />
                 </TableUIInfo>
                 <TableUIInfo>
+                  <option name="className" value="Apply" />
+                  <option name="tableName" value="Apply" />
+                </TableUIInfo>
+                <TableUIInfo>
                   <option name="className" value="Availabletime" />
                   <option name="tableName" value="AvailableTime" />
                 </TableUIInfo>
@@ -93,6 +97,10 @@
                 <TableUIInfo>
                   <option name="className" value="Time" />
                   <option name="tableName" value="Time" />
+                </TableUIInfo>
+                <TableUIInfo>
+                  <option name="className" value="Users" />
+                  <option name="tableName" value="Users" />
                 </TableUIInfo>
               </list>
             </option>

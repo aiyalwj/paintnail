@@ -16,14 +16,14 @@ public class Apply implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Apply_id", type = IdType.AUTO)
-    private Integer applyId;
+    @TableId(value = "Apply_id")
+    private String applyId;
 
     /**
      * 
      */
     @TableField(value = "User_id")
-    private Integer userId;
+    private String userId;
 
     /**
      * 
@@ -49,28 +49,28 @@ public class Apply implements Serializable {
     /**
      * 
      */
-    public Integer getApplyId() {
+    public String getApplyId() {
         return applyId;
     }
 
     /**
      * 
      */
-    public void setApplyId(Integer applyId) {
+    public void setApplyId(String applyId) {
         this.applyId = applyId;
     }
 
     /**
      * 
      */
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
     /**
      * 
      */
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -119,8 +119,8 @@ public class Apply implements Serializable {
     @Override
     public String toString() {
         return "Apply{" +
-                "applyId=" + applyId +
-                ", userId=" + userId +
+                "applyId='" + applyId + '\'' +
+                ", userId='" + userId + '\'' +
                 ", applyTime=" + applyTime +
                 ", applyVideo='" + applyVideo + '\'' +
                 ", applyState='" + applyState + '\'' +
