@@ -5,14 +5,12 @@
 <mapper namespace="com.lwj.PaintNail.mapper.ManicuristsMapper">
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Manicurists">
-            <id property="manicuristId" column="Manicurist_id" jdbcType="VARCHAR"/>
-            <result property="userId" column="User_id" jdbcType="VARCHAR"/>
+            <id property="manicuristId" column="Manicurist_id" jdbcType="INTEGER"/>
+            <result property="userId" column="User_id" jdbcType="INTEGER"/>
             <result property="manicuristAddress" column="Manicurist_address" jdbcType="VARCHAR"/>
-            <result property="manicuristImages" column="Manicurist_images" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        Manicurist_id,User_id,Manicurist_address,
-        Manicurist_images
+        Manicurist_id,User_id,Manicurist_address
     </sql>
 </mapper>

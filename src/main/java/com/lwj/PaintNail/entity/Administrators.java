@@ -15,8 +15,8 @@ public class Administrators implements Serializable {
     /**
      * 
      */
-    @TableField(value = "Administrator_id")
-    private String administratorId;
+    @TableId(value = "Administrator_id", type = IdType.AUTO)
+    private Integer administratorId;
 
     /**
      * 
@@ -36,14 +36,14 @@ public class Administrators implements Serializable {
     /**
      * 
      */
-    public String getAdministratorId() {
+    public Integer getAdministratorId() {
         return administratorId;
     }
 
     /**
      * 
      */
-    public void setAdministratorId(String administratorId) {
+    public void setAdministratorId(Integer administratorId) {
         this.administratorId = administratorId;
     }
 
@@ -78,7 +78,7 @@ public class Administrators implements Serializable {
     @Override
     public String toString() {
         return "Administrators{" +
-                "administratorId='" + administratorId + '\'' +
+                "administratorId=" + administratorId +
                 ", administratorName='" + administratorName + '\'' +
                 ", administratorPwd='" + administratorPwd + '\'' +
                 '}';

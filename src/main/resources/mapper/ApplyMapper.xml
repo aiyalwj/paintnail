@@ -5,8 +5,8 @@
 <mapper namespace="com.lwj.PaintNail.mapper.ApplyMapper">
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Apply">
-            <id property="applyId" column="Apply_id" jdbcType="VARCHAR"/>
-            <result property="userId" column="User_id" jdbcType="VARCHAR"/>
+            <id property="applyId" column="Apply_id" jdbcType="INTEGER"/>
+            <result property="userId" column="User_id" jdbcType="INTEGER"/>
             <result property="applyTime" column="Apply_time" jdbcType="TIMESTAMP"/>
             <result property="applyVideo" column="Apply_video" jdbcType="VARCHAR"/>
             <result property="applyState" column="Apply_state" jdbcType="VARCHAR"/>

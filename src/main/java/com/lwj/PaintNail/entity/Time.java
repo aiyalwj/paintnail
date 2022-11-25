@@ -16,8 +16,8 @@ public class Time implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Time_id")
-    private String timeId;
+    @TableId(value = "Time_id", type = IdType.AUTO)
+    private Integer timeId;
 
     /**
      * 
@@ -37,14 +37,14 @@ public class Time implements Serializable {
     /**
      * 
      */
-    public String getTimeId() {
+    public Integer getTimeId() {
         return timeId;
     }
 
     /**
      * 
      */
-    public void setTimeId(String timeId) {
+    public void setTimeId(Integer timeId) {
         this.timeId = timeId;
     }
 
@@ -79,10 +79,9 @@ public class Time implements Serializable {
     @Override
     public String toString() {
         return "Time{" +
-                "timeId='" + timeId + '\'' +
+                "timeId=" + timeId +
                 ", timeName='" + timeName + '\'' +
                 ", timeStart=" + timeStart +
                 '}';
     }
-
 }

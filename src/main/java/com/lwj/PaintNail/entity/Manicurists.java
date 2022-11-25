@@ -15,14 +15,14 @@ public class Manicurists implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Manicurist_id")
-    private String manicuristId;
+    @TableId(value = "Manicurist_id", type = IdType.AUTO)
+    private Integer manicuristId;
 
     /**
      * 
      */
     @TableField(value = "User_id")
-    private String userId;
+    private Integer userId;
 
     /**
      * 
@@ -30,40 +30,34 @@ public class Manicurists implements Serializable {
     @TableField(value = "Manicurist_address")
     private String manicuristAddress;
 
-    /**
-     * 
-     */
-    @TableField(value = "Manicurist_images")
-    private String manicuristImages;
-
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
     /**
      * 
      */
-    public String getManicuristId() {
+    public Integer getManicuristId() {
         return manicuristId;
     }
 
     /**
      * 
      */
-    public void setManicuristId(String manicuristId) {
+    public void setManicuristId(Integer manicuristId) {
         this.manicuristId = manicuristId;
     }
 
     /**
      * 
      */
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
     /**
      * 
      */
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -81,27 +75,12 @@ public class Manicurists implements Serializable {
         this.manicuristAddress = manicuristAddress;
     }
 
-    /**
-     * 
-     */
-    public String getManicuristImages() {
-        return manicuristImages;
-    }
-
-    /**
-     * 
-     */
-    public void setManicuristImages(String manicuristImages) {
-        this.manicuristImages = manicuristImages;
-    }
-
     @Override
     public String toString() {
         return "Manicurists{" +
-                "manicuristId='" + manicuristId + '\'' +
-                ", userId='" + userId + '\'' +
+                "manicuristId=" + manicuristId +
+                ", userId=" + userId +
                 ", manicuristAddress='" + manicuristAddress + '\'' +
-                ", manicuristImages='" + manicuristImages + '\'' +
                 '}';
     }
 }

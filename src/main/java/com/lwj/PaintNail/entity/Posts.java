@@ -16,14 +16,14 @@ public class Posts implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Post_id")
-    private String postId;
+    @TableId(value = "Post_id", type = IdType.AUTO)
+    private Integer postId;
 
     /**
      * 
      */
     @TableField(value = "User_id")
-    private String userId;
+    private Integer userId;
 
     /**
      * 
@@ -37,40 +37,34 @@ public class Posts implements Serializable {
     @TableField(value = "Post_date")
     private Date postDate;
 
-    /**
-     * 
-     */
-    @TableField(value = "Post_images")
-    private String postImages;
-
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
     /**
      * 
      */
-    public String getPostId() {
+    public Integer getPostId() {
         return postId;
     }
 
     /**
      * 
      */
-    public void setPostId(String postId) {
+    public void setPostId(Integer postId) {
         this.postId = postId;
     }
 
     /**
      * 
      */
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
     /**
      * 
      */
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -102,28 +96,13 @@ public class Posts implements Serializable {
         this.postDate = postDate;
     }
 
-    /**
-     * 
-     */
-    public String getPostImages() {
-        return postImages;
-    }
-
-    /**
-     * 
-     */
-    public void setPostImages(String postImages) {
-        this.postImages = postImages;
-    }
-
     @Override
     public String toString() {
         return "Posts{" +
-                "postId='" + postId + '\'' +
-                ", userId='" + userId + '\'' +
+                "postId=" + postId +
+                ", userId=" + userId +
                 ", postContents='" + postContents + '\'' +
                 ", postDate=" + postDate +
-                ", postImages='" + postImages + '\'' +
                 '}';
     }
 }

@@ -5,8 +5,8 @@
 <mapper namespace="com.lwj.PaintNail.mapper.ReportMapper">
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Report">
-            <id property="postId" column="Post_id" jdbcType="VARCHAR"/>
-            <id property="userId" column="User_id" jdbcType="VARCHAR"/>
+            <id property="postId" column="Post_id" jdbcType="INTEGER"/>
+            <id property="userId" column="User_id" jdbcType="INTEGER"/>
             <result property="reportDate" column="Report_date" jdbcType="TIMESTAMP"/>
     </resultMap>
 

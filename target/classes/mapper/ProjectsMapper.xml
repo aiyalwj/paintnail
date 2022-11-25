@@ -6,17 +6,15 @@
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Projects">
             <id property="projectId" column="Project_id" jdbcType="VARCHAR"/>
-            <result property="manicuristId" column="Manicurist_id" jdbcType="VARCHAR"/>
-            <result property="projectCost" column="Project_cost" jdbcType="VARCHAR"/>
+            <result property="manicuristId" column="Manicurist_id" jdbcType="INTEGER"/>
+            <result property="projectCost" column="Project_cost" jdbcType="DECIMAL"/>
             <result property="projectName" column="Project_name" jdbcType="VARCHAR"/>
             <result property="projectTime" column="Project_time" jdbcType="TIME"/>
             <result property="projectContent" column="Project_content" jdbcType="VARCHAR"/>
-            <result property="projectImages" column="Project_images" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         Project_id,Manicurist_id,Project_cost,
-        Project_name,Project_time,Project_content,
-        Project_images
+        Project_name,Project_time,Project_content
     </sql>
 </mapper>

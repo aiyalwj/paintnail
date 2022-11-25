@@ -16,14 +16,14 @@ public class Availabletime implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Time_id")
-    private String timeId;
+    @TableId(value = "Time_id", type = IdType.AUTO)
+    private Integer timeId;
 
     /**
      * 
      */
     @TableId(value = "Manicurist_id")
-    private String manicuristId;
+    private Integer manicuristId;
 
     /**
      * 
@@ -43,28 +43,28 @@ public class Availabletime implements Serializable {
     /**
      * 
      */
-    public String getTimeId() {
+    public Integer getTimeId() {
         return timeId;
     }
 
     /**
      * 
      */
-    public void setTimeId(String timeId) {
+    public void setTimeId(Integer timeId) {
         this.timeId = timeId;
     }
 
     /**
      * 
      */
-    public String getManicuristId() {
+    public Integer getManicuristId() {
         return manicuristId;
     }
 
     /**
      * 
      */
-    public void setManicuristId(String manicuristId) {
+    public void setManicuristId(Integer manicuristId) {
         this.manicuristId = manicuristId;
     }
 
@@ -99,8 +99,8 @@ public class Availabletime implements Serializable {
     @Override
     public String toString() {
         return "Availabletime{" +
-                "timeId='" + timeId + '\'' +
-                ", manicuristId='" + manicuristId + '\'' +
+                "timeId=" + timeId +
+                ", manicuristId=" + manicuristId +
                 ", availabletimeDate=" + availabletimeDate +
                 ", availabletimeState='" + availabletimeState + '\'' +
                 '}';

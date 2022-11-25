@@ -17,19 +17,20 @@ public class UserLoginController {
     @Autowired
     private UsersService usersService;
 
-    /**
-     * 表示一个http请求的操作
-     * @ApiOperation(value = “接口说明”, httpMethod = “接口请求方式”, response =“接口返回参数类型”, notes = “接口发布说明”；
-     * @GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。
-     * @RequestParam把请求中的指定名称的参数传递给控制器中的形参赋值
-     * @param id
-     * @param pwd
-     * @return
-     */
+    //表示一个http请求的操作
+    /* @ApiOperation(value = “接口说明”, httpMethod = “接口请求方式”, response =
+    “接口返回参数类型”, notes = “接口发布说明”；
+    */
     @ApiOperation(value="用户登录")
+
+    /*
+    @GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。
+     */
     @GetMapping(value = {"/login"})
 
-
+    /*
+    @RequestParam把请求中的指定名称的参数传递给控制器中的形参赋值
+     */
     public RespBean doLogin(@RequestParam("id") String id, @RequestParam("pwd") String pwd) {
         return usersService.doLogin(id, pwd);
     }

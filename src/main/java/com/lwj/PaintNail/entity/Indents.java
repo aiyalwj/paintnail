@@ -16,14 +16,20 @@ public class Indents implements Serializable {
     /**
      * 
      */
+    @TableId(value = "Indent_no", type = IdType.AUTO)
+    private Integer indentNo;
+
+    /**
+     * 
+     */
     @TableId(value = "User_id")
-    private String userId;
+    private Integer userId;
 
     /**
      * 
      */
     @TableId(value = "Time_id")
-    private String timeId;
+    private Integer timeId;
 
     /**
      * 
@@ -35,13 +41,7 @@ public class Indents implements Serializable {
      * 
      */
     @TableId(value = "Manicurist_id")
-    private String manicuristId;
-
-    /**
-     * 
-     */
-    @TableField(value = "Indent_no")
-    private String indentNo;
+    private Integer manicuristId;
 
     /**
      * 
@@ -67,28 +67,42 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    public String getUserId() {
+    public Integer getIndentNo() {
+        return indentNo;
+    }
+
+    /**
+     * 
+     */
+    public void setIndentNo(Integer indentNo) {
+        this.indentNo = indentNo;
+    }
+
+    /**
+     * 
+     */
+    public Integer getUserId() {
         return userId;
     }
 
     /**
      * 
      */
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
     /**
      * 
      */
-    public String getTimeId() {
+    public Integer getTimeId() {
         return timeId;
     }
 
     /**
      * 
      */
-    public void setTimeId(String timeId) {
+    public void setTimeId(Integer timeId) {
         this.timeId = timeId;
     }
 
@@ -109,29 +123,15 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    public String getManicuristId() {
+    public Integer getManicuristId() {
         return manicuristId;
     }
 
     /**
      * 
      */
-    public void setManicuristId(String manicuristId) {
+    public void setManicuristId(Integer manicuristId) {
         this.manicuristId = manicuristId;
-    }
-
-    /**
-     * 
-     */
-    public String getIndentNo() {
-        return indentNo;
-    }
-
-    /**
-     * 
-     */
-    public void setIndentNo(String indentNo) {
-        this.indentNo = indentNo;
     }
 
     /**
@@ -179,11 +179,11 @@ public class Indents implements Serializable {
     @Override
     public String toString() {
         return "Indents{" +
-                "userId='" + userId + '\'' +
-                ", timeId='" + timeId + '\'' +
+                "indentNo=" + indentNo +
+                ", userId=" + userId +
+                ", timeId=" + timeId +
                 ", projectId='" + projectId + '\'' +
-                ", manicuristId='" + manicuristId + '\'' +
-                ", indentNo='" + indentNo + '\'' +
+                ", manicuristId=" + manicuristId +
                 ", indentState='" + indentState + '\'' +
                 ", indentStart=" + indentStart +
                 ", indentEnd=" + indentEnd +
