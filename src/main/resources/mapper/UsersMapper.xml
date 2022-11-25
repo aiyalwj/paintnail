@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lwj.PaintNail.mapper.UsersMapper">
 
-
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Users">
             <id property="userId" column="User_id" jdbcType="VARCHAR"/>
             <result property="userAccount" column="User_account" jdbcType="VARCHAR"/>
@@ -17,7 +16,6 @@
         User_id,User_account,User_pwd,
         User_phone,User_school
     </sql>
-
 
     <select id="selectUsersById" resultType="com.lwj.PaintNail.entity.Users">
         select * from Users where User_id = #{id}
@@ -35,8 +33,8 @@
         select * from Users where User_account like concat('%', #{account}, '%')
     </select>
 
-    <update id="updateUsersinfo">
-        update Users set User_phone = #{userPhone} , User_school = #{userSchool} where User_account = #{userAccount}
+    <update id="updateUsersInfo">
+        update Users set User_phone = #{phone} , User_school = #{school} where User_account = #{account}
     </update>
 
     <insert id="registerUsers">

@@ -10,7 +10,7 @@ import java.util.List;
 /**
 * @author wz111
 * @description 针对表【Users】的数据库操作Mapper
-* @createDate 2022-11-16 11:39:30
+* @createDate 2022-11-26 00:54:24
 * @Entity com.lwj.PaintNail.entity.Users
 */
 @Mapper
@@ -19,12 +19,13 @@ public interface UsersMapper extends BaseMapper<Users> {
 
     Users selectUsersByAccount(@Param("account") String account);
 
-    List<Users> listAll();
+    List<com.lwj.PaintNail.entity.Users> listAll();
 
-    List<Users> listALlByAccount(@Param("account") String account);
+    List<com.lwj.PaintNail.entity.Users> listALlByAccount(@Param("account") String account);
 
-    void updateUsersinfo(Users users);
-    void registerUsers(Users users);
+    void updateUsersInfo(@Param("account")String account,@Param("phone")String phone,@Param("school")String school);
+
+    void registerUsers(com.lwj.PaintNail.entity.Users users);
 
     void deleteUsersByAccount(@Param("account") String account);
 }

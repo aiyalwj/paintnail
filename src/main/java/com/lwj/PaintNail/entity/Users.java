@@ -15,8 +15,8 @@ public class Users implements Serializable {
     /**
      * 
      */
-    @TableId(value = "User_id", type = IdType.AUTO)
-    private Integer userId;
+    @TableId(value = "User_id")
+    private String userId;
 
     /**
      * 
@@ -50,15 +50,31 @@ public class Users implements Serializable {
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
+    public String getSalt() {
+        return salt;
+    }
 
-    public Integer getUserId() {
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    /**
+     * 
+     */
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    /**
+     * 
+     */
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
+    /**
+     * 
+     */
     public String getUserAccount() {
         return userAccount;
     }
@@ -112,22 +128,10 @@ public class Users implements Serializable {
         this.userSchool = userSchool;
     }
 
-    /**
-     * 盐值 getter setter
-     * @return
-     */
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
     @Override
     public String toString() {
         return "Users{" +
-                "userId=" + userId +
+                "userId='" + userId + '\'' +
                 ", userAccount='" + userAccount + '\'' +
                 ", userPwd='" + userPwd + '\'' +
                 ", userPhone='" + userPhone + '\'' +

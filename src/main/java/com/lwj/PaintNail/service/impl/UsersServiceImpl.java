@@ -11,19 +11,43 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-
 /**
 * @author wz111
 * @description 针对表【Users】的数据库操作Service实现
-* @createDate 2022-11-16 11:39:30
+* @createDate 2022-11-26 00:54:24
 */
 @Service
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
     implements UsersService{
-
     @Autowired
-    private UsersMapper usersMapper;
+    private com.lwj.PaintNail.mapper.UsersMapper usersMapper;
+
+    /**
+     * 注册账户
+     * @param account
+     * @param pwd
+     * @param phone
+     * @param school
+     * @return
+     */
+    @Override
+    @Transactional
+    public RespBean doRegister(String account, String pwd, String phone, String school) {
+        if(account == "" || account == null){
+            return RespBean.error(RespBeanEnum.USER_ACCOUNT_EMPTY);
+        }
+        if(usersMapper.selectUsersByAccount(account) == null){
+            return RespBean.error(RespBeanEnum.USER_ACCOUNT_NOT_FOUND);
+        }
+        com.lwj.PaintNail.entity.Users user=new com.lwj.PaintNail.entity.Users();
+        user.setUserAccount(account);
+        user.setUserPwd(pwd);
+        user.setUserPhone(phone);
+        user.setUserSchool(school);
+        usersMapper.registerUsers(user);
+
+        return RespBean.success(user);
+    }
 
     /**
      * 登录账号
@@ -38,7 +62,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
             return RespBean.error(RespBeanEnum.LOGIN_INPUT_EMPTY);
         }
 
-        Users user = usersMapper.selectUsersByAccount(account);
+        com.lwj.PaintNail.entity.Users user = usersMapper.selectUsersByAccount(account);
 
         //用户不存在
         if(user == null){
@@ -47,15 +71,34 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
 
         //加密
         if(!MD5Utils.inputPassToDBPass(password,user.getSalt()).equals(user.getUserPwd())) {
-                return RespBean.error(RespBeanEnum.LOGIN_ERROR);
+            return RespBean.error(RespBeanEnum.LOGIN_ERROR);
         }
         return RespBean.success(user);
     }
 
+
+    /**
+     * 更新账号信息 电话，学校
+     * @param account
+     * @param phone
+     * @param school
+     * @return
+     */
     @Override
     @Transactional
-    public RespBean updateUser(Users users) {
-        return null;
+    public RespBean updateUserinfo(String account,String phone,String school) {
+        //账号为空
+        if(account.equals("") || account == null){
+            return RespBean.error(RespBeanEnum.USER_ACCOUNT_EMPTY);
+        }
+        com.lwj.PaintNail.entity.Users user = usersMapper.selectUsersByAccount(account);
+        //用户不存在
+        if(user == null){
+            return RespBean.error(RespBeanEnum.USER_ACCOUNT_NOT_FOUND);
+        }
+
+        usersMapper.updateUsersInfo(account,phone,school);
+        return RespBean.success();
     }
 
     /**
@@ -66,10 +109,10 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
     @Override
     @Transactional
     public RespBean deleteUserByAccount(String account) {
-        Users user = usersMapper.selectUsersByAccount(account);
+        com.lwj.PaintNail.entity.Users user = usersMapper.selectUsersByAccount(account);
         //account为空
         if (account.equals("") || account == null){
-            return RespBean.error(RespBeanEnum.MODIFY_NICKNAME_EMPTY);
+            return RespBean.error(RespBeanEnum.USER_ACCOUNT_EMPTY);
         }
 
         //用户不存在
