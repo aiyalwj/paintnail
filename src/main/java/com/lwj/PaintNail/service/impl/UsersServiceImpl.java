@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
     implements UsersService{
     @Autowired
-    private com.lwj.PaintNail.mapper.UsersMapper usersMapper;
+    private UsersMapper usersMapper;
 
     /**
      * 注册账户
@@ -39,7 +39,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
         if(usersMapper.selectUsersByAccount(account) == null){
             return RespBean.error(RespBeanEnum.USER_ACCOUNT_NOT_FOUND);
         }
-        com.lwj.PaintNail.entity.Users user=new com.lwj.PaintNail.entity.Users();
+        Users user=new Users();
         user.setUserAccount(account);
         user.setUserPwd(pwd);
         user.setUserPhone(phone);
@@ -62,7 +62,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
             return RespBean.error(RespBeanEnum.LOGIN_INPUT_EMPTY);
         }
 
-        com.lwj.PaintNail.entity.Users user = usersMapper.selectUsersByAccount(account);
+        Users user = usersMapper.selectUsersByAccount(account);
 
         //用户不存在
         if(user == null){
@@ -86,12 +86,12 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
      */
     @Override
     @Transactional
-    public RespBean updateUserinfo(String account,String phone,String school) {
+    public RespBean updateUserinfo(String account, String phone, String school) {
         //账号为空
         if(account.equals("") || account == null){
             return RespBean.error(RespBeanEnum.USER_ACCOUNT_EMPTY);
         }
-        com.lwj.PaintNail.entity.Users user = usersMapper.selectUsersByAccount(account);
+        Users user = usersMapper.selectUsersByAccount(account);
         //用户不存在
         if(user == null){
             return RespBean.error(RespBeanEnum.USER_ACCOUNT_NOT_FOUND);
@@ -109,7 +109,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
     @Override
     @Transactional
     public RespBean deleteUserByAccount(String account) {
-        com.lwj.PaintNail.entity.Users user = usersMapper.selectUsersByAccount(account);
+        Users user = usersMapper.selectUsersByAccount(account);
         //account为空
         if (account.equals("") || account == null){
             return RespBean.error(RespBeanEnum.USER_ACCOUNT_EMPTY);

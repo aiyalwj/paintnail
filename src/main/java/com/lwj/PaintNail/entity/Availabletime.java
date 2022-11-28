@@ -1,9 +1,9 @@
 package com.lwj.PaintNail.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,14 +16,14 @@ public class Availabletime implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Time_id", type = IdType.AUTO)
-    private Integer timeId;
+    @TableId(value = "Time_id")
+    private String timeId;
 
     /**
      * 
      */
     @TableId(value = "Manicurist_id")
-    private Integer manicuristId;
+    private String manicuristId;
 
     /**
      * 
@@ -43,28 +43,28 @@ public class Availabletime implements Serializable {
     /**
      * 
      */
-    public Integer getTimeId() {
+    public String getTimeId() {
         return timeId;
     }
 
     /**
      * 
      */
-    public void setTimeId(Integer timeId) {
+    public void setTimeId(String timeId) {
         this.timeId = timeId;
     }
 
     /**
      * 
      */
-    public Integer getManicuristId() {
+    public String getManicuristId() {
         return manicuristId;
     }
 
     /**
      * 
      */
-    public void setManicuristId(Integer manicuristId) {
+    public void setManicuristId(String manicuristId) {
         this.manicuristId = manicuristId;
     }
 
@@ -99,8 +99,8 @@ public class Availabletime implements Serializable {
     @Override
     public String toString() {
         return "Availabletime{" +
-                "timeId=" + timeId +
-                ", manicuristId=" + manicuristId +
+                "timeId='" + timeId + '\'' +
+                ", manicuristId='" + manicuristId + '\'' +
                 ", availabletimeDate=" + availabletimeDate +
                 ", availabletimeState='" + availabletimeState + '\'' +
                 '}';

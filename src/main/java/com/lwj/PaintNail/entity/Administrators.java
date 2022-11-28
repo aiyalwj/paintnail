@@ -1,9 +1,8 @@
 package com.lwj.PaintNail.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -15,8 +14,8 @@ public class Administrators implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Administrator_id", type = IdType.AUTO)
-    private Integer administratorId;
+    @TableField(value = "Administrator_id")
+    private String administratorId;
 
     /**
      * 
@@ -36,14 +35,14 @@ public class Administrators implements Serializable {
     /**
      * 
      */
-    public Integer getAdministratorId() {
+    public String getAdministratorId() {
         return administratorId;
     }
 
     /**
      * 
      */
-    public void setAdministratorId(Integer administratorId) {
+    public void setAdministratorId(String administratorId) {
         this.administratorId = administratorId;
     }
 
@@ -78,7 +77,7 @@ public class Administrators implements Serializable {
     @Override
     public String toString() {
         return "Administrators{" +
-                "administratorId=" + administratorId +
+                "administratorId='" + administratorId + '\'' +
                 ", administratorName='" + administratorName + '\'' +
                 ", administratorPwd='" + administratorPwd + '\'' +
                 '}';

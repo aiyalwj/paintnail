@@ -13,4 +13,10 @@
     <sql id="Base_Column_List">
         Manicurist_id,User_id,Manicurist_address
     </sql>
+    <select id="selectManicuristsById" resultType="com.lwj.PaintNail.entity.Manicurists">
+        select * from Manicurists where Manicurist_id = #{id}
+    </select>
+    <select id="selectManicuristsByAccount" resultType="com.lwj.PaintNail.entity.Manicurists">
+        select * from Manicurists where Manicurist_account = #{account}
+    </select>
 </mapper>

@@ -1,9 +1,9 @@
 package com.lwj.PaintNail.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,14 +16,14 @@ public class Posts implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Post_id", type = IdType.AUTO)
-    private Integer postId;
+    @TableId(value = "Post_id")
+    private String postId;
 
     /**
      * 
      */
     @TableField(value = "User_id")
-    private Integer userId;
+    private String userId;
 
     /**
      * 
@@ -37,34 +37,40 @@ public class Posts implements Serializable {
     @TableField(value = "Post_date")
     private Date postDate;
 
+    /**
+     * 
+     */
+    @TableField(value = "Post_images")
+    private String postImages;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
     /**
      * 
      */
-    public Integer getPostId() {
+    public String getPostId() {
         return postId;
     }
 
     /**
      * 
      */
-    public void setPostId(Integer postId) {
+    public void setPostId(String postId) {
         this.postId = postId;
     }
 
     /**
      * 
      */
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
     /**
      * 
      */
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -96,13 +102,28 @@ public class Posts implements Serializable {
         this.postDate = postDate;
     }
 
+    /**
+     * 
+     */
+    public String getPostImages() {
+        return postImages;
+    }
+
+    /**
+     * 
+     */
+    public void setPostImages(String postImages) {
+        this.postImages = postImages;
+    }
+
     @Override
     public String toString() {
         return "Posts{" +
-                "postId=" + postId +
-                ", userId=" + userId +
+                "postId='" + postId + '\'' +
+                ", userId='" + userId + '\'' +
                 ", postContents='" + postContents + '\'' +
                 ", postDate=" + postDate +
+                ", postImages='" + postImages + '\'' +
                 '}';
     }
 }

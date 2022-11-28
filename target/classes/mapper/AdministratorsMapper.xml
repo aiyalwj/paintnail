@@ -13,4 +13,14 @@
     <sql id="Base_Column_List">
         Administrator_id,Administrator_name,Administrator_pwd
     </sql>
+    <select id="selectAdministratorById" resultType="com.lwj.PaintNail.entity.Administrators">
+        select * from Administrators where Administrator_id = #{id}
+    </select>
+    <select id="selectAdministratorByName" resultType="com.lwj.PaintNail.entity.Administrators">
+        select * from Administrators where Administrator_name = #{name}
+    </select>
+    <select id="listAll" resultType="com.lwj.PaintNail.entity.Administrators">
+        select * from Administrators
+    </select>
+
 </mapper>

@@ -1,9 +1,9 @@
 package com.lwj.PaintNail.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,8 +16,8 @@ public class Time implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Time_id", type = IdType.AUTO)
-    private Integer timeId;
+    @TableId(value = "Time_id")
+    private String timeId;
 
     /**
      * 
@@ -37,14 +37,14 @@ public class Time implements Serializable {
     /**
      * 
      */
-    public Integer getTimeId() {
+    public String getTimeId() {
         return timeId;
     }
 
     /**
      * 
      */
-    public void setTimeId(Integer timeId) {
+    public void setTimeId(String timeId) {
         this.timeId = timeId;
     }
 
@@ -79,7 +79,7 @@ public class Time implements Serializable {
     @Override
     public String toString() {
         return "Time{" +
-                "timeId=" + timeId +
+                "timeId='" + timeId + '\'' +
                 ", timeName='" + timeName + '\'' +
                 ", timeStart=" + timeStart +
                 '}';

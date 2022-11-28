@@ -19,13 +19,13 @@ public interface UsersMapper extends BaseMapper<Users> {
 
     Users selectUsersByAccount(@Param("account") String account);
 
-    List<com.lwj.PaintNail.entity.Users> listAll();
+    List<Users> listAll();
 
-    List<com.lwj.PaintNail.entity.Users> listALlByAccount(@Param("account") String account);
+    List<Users> listALlByAccount(@Param("account") String account);
 
     void updateUsersInfo(@Param("account")String account,@Param("phone")String phone,@Param("school")String school);
 
-    void registerUsers(com.lwj.PaintNail.entity.Users users);
+    void registerUsers(Users users);
 
     void deleteUsersByAccount(@Param("account") String account);
 }

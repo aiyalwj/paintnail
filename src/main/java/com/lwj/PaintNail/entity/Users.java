@@ -1,9 +1,9 @@
 package com.lwj.PaintNail.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
@@ -49,14 +49,6 @@ public class Users implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
 
     /**
      * 
@@ -126,6 +118,14 @@ public class Users implements Serializable {
      */
     public void setUserSchool(String userSchool) {
         this.userSchool = userSchool;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     @Override

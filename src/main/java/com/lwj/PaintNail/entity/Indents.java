@@ -1,9 +1,9 @@
 package com.lwj.PaintNail.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,20 +16,14 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Indent_no", type = IdType.AUTO)
-    private Integer indentNo;
-
-    /**
-     * 
-     */
     @TableId(value = "User_id")
-    private Integer userId;
+    private String userId;
 
     /**
      * 
      */
     @TableId(value = "Time_id")
-    private Integer timeId;
+    private String timeId;
 
     /**
      * 
@@ -41,7 +35,13 @@ public class Indents implements Serializable {
      * 
      */
     @TableId(value = "Manicurist_id")
-    private Integer manicuristId;
+    private String manicuristId;
+
+    /**
+     * 
+     */
+    @TableField(value = "Indent_no")
+    private String indentNo;
 
     /**
      * 
@@ -61,48 +61,40 @@ public class Indents implements Serializable {
     @TableField(value = "Indent_end")
     private Date indentEnd;
 
+    /**
+     * 
+     */
+    @TableField(value = "Indent_comment")
+    private String indentComment;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
     /**
      * 
      */
-    public Integer getIndentNo() {
-        return indentNo;
-    }
-
-    /**
-     * 
-     */
-    public void setIndentNo(Integer indentNo) {
-        this.indentNo = indentNo;
-    }
-
-    /**
-     * 
-     */
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
     /**
      * 
      */
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
     /**
      * 
      */
-    public Integer getTimeId() {
+    public String getTimeId() {
         return timeId;
     }
 
     /**
      * 
      */
-    public void setTimeId(Integer timeId) {
+    public void setTimeId(String timeId) {
         this.timeId = timeId;
     }
 
@@ -123,15 +115,29 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    public Integer getManicuristId() {
+    public String getManicuristId() {
         return manicuristId;
     }
 
     /**
      * 
      */
-    public void setManicuristId(Integer manicuristId) {
+    public void setManicuristId(String manicuristId) {
         this.manicuristId = manicuristId;
+    }
+
+    /**
+     * 
+     */
+    public String getIndentNo() {
+        return indentNo;
+    }
+
+    /**
+     * 
+     */
+    public void setIndentNo(String indentNo) {
+        this.indentNo = indentNo;
     }
 
     /**
@@ -176,17 +182,32 @@ public class Indents implements Serializable {
         this.indentEnd = indentEnd;
     }
 
+    /**
+     * 
+     */
+    public String getIndentComment() {
+        return indentComment;
+    }
+
+    /**
+     * 
+     */
+    public void setIndentComment(String indentComment) {
+        this.indentComment = indentComment;
+    }
+
     @Override
     public String toString() {
         return "Indents{" +
-                "indentNo=" + indentNo +
-                ", userId=" + userId +
-                ", timeId=" + timeId +
+                "userId='" + userId + '\'' +
+                ", timeId='" + timeId + '\'' +
                 ", projectId='" + projectId + '\'' +
-                ", manicuristId=" + manicuristId +
+                ", manicuristId='" + manicuristId + '\'' +
+                ", indentNo='" + indentNo + '\'' +
                 ", indentState='" + indentState + '\'' +
                 ", indentStart=" + indentStart +
                 ", indentEnd=" + indentEnd +
+                ", indentComment='" + indentComment + '\'' +
                 '}';
     }
 }

@@ -2,7 +2,9 @@ package com.lwj.PaintNail.mapper;
 
 import com.lwj.PaintNail.entity.Manicurists;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.lwj.PaintNail.entity.Users;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
 * @author wz111
@@ -12,7 +14,9 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface ManicuristsMapper extends BaseMapper<Manicurists> {
+    Manicurists selectManicuristsById(@Param("id") String id);
 
+    Manicurists selectManicuristsByAccount(@Param("account") String account);
 }
 
 
