@@ -26,7 +26,7 @@ public class UserLoginController {
     /*
     @GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。
      */
-    @GetMapping(value = {"/userlogin"})
+    @GetMapping(value = {"/login"})
 
     /*
     @RequestParam把请求中的指定名称的参数传递给控制器中的形参赋值

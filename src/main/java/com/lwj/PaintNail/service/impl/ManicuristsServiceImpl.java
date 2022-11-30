@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
 * @author wz111
 * @description 针对表【Manicurists】的数据库操作Service实现
@@ -42,6 +44,19 @@ public class ManicuristsServiceImpl extends ServiceImpl<ManicuristsMapper, Manic
 //            return RespBean.error(RespBeanEnum.LOGIN_ERROR);
 //        }
         return RespBean.success(manicurists);
+    }
+
+    @Override
+    @Transactional
+    public RespBean listAll() {
+        List<Manicurists> Listmanicurists = manicuristsMapper.listAll();
+        return RespBean.success(Listmanicurists);
+    }
+
+    @Override
+    @Transactional
+    public RespBean getManicuristsInfo(String account) {
+        return null;
     }
 }
 

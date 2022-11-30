@@ -11,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface ManicuristsService extends IService<Manicurists> {
     RespBean doLogin(String account,String password);
+
+    RespBean listAll();
+    RespBean getManicuristsInfo(String account);
 }

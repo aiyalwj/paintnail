@@ -15,6 +15,6 @@
 
     <sql id="Base_Column_List">
         Project_id,Manicurist_id,Project_cost,
-        Project_name,Project_time,Project_content
+        Project_name,Project_time,Project_content,Project_images
     </sql>
 </mapper>

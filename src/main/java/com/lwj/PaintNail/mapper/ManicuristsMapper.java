@@ -6,6 +6,8 @@ import com.lwj.PaintNail.entity.Users;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
 * @author wz111
 * @description 针对表【Manicurists】的数据库操作Mapper
@@ -17,6 +19,8 @@ public interface ManicuristsMapper extends BaseMapper<Manicurists> {
     Manicurists selectManicuristsById(@Param("id") String id);
 
     Manicurists selectManicuristsByAccount(@Param("account") String account);
+
+    List<Manicurists> listAll();
 }
 
 

@@ -13,6 +13,6 @@
 
     <sql id="Base_Column_List">
         Post_id,User_id,Post_contents,
-        Post_date
+        Post_date,Post_images
     </sql>
 </mapper>

@@ -16,8 +16,8 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        Indent_no,User_id,Time_id,
-        Project_id,Manicurist_id,Indent_state,
-        Indent_start,Indent_end
+        User_id,Time_id,Project_id,
+        Manicurist_id,Indent_no,Indent_state,
+        Indent_start,Indent_end,Indent_comment
     </sql>
 </mapper>
