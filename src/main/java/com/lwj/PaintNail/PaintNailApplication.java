@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 //@EnableScheduling
 @MapperScan("com.lwj.PaintNail.mapper")
-@ComponentScan("com.lwj.PaintNail.config")
+//@ComponentScan("com.lwj.PaintNail.config")
 public class PaintNailApplication {
     public static void main(String[] args) {
         SpringApplication.run(PaintNailApplication.class,args);

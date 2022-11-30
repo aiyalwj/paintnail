@@ -13,26 +13,26 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /*
     Swagger配置文件
  */
-@Configuration
-@EnableSwagger2
-public class SwaggerConfig {
-    @Bean
-    public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.lwj.PaintNail.controller"))
-                .paths(PathSelectors.any())
-                .build();
-    }
-
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title(" PaintNail APIs")
-                .description("PaintNail APIs")
-                .termsOfServiceUrl("http://localhost:8080/")
-//                .contact("long")
-                .version("1.0")
-                .build();
-    }
-}
+//@Configuration
+//@EnableSwagger2
+//public class SwaggerConfig {
+//    @Bean
+//    public Docket createRestApi() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .apiInfo(apiInfo())
+//                .select()
+//                .apis(RequestHandlerSelectors.basePackage("com.lwj.PaintNail.controller"))
+//                .paths(PathSelectors.any())
+//                .build();
+//    }
+//
+//    private ApiInfo apiInfo() {
+//        return new ApiInfoBuilder()
+//                .title(" PaintNail APIs")
+//                .description("PaintNail APIs")
+//                .termsOfServiceUrl("http://localhost:8080/")
+////                .contact("long")
+//                .version("1.0")
+//                .build();
+//    }
+//}

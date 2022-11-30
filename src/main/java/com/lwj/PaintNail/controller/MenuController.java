@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 @Api(value = "主页")
-@RequestMapping("/home")
+
 public class MenuController {
 
     @Autowired
     private ManicuristsService manicuristsService;
 
     @ApiOperation(value = "列出所有美甲师")
-    @GetMapping("/listAll")
+    @RequestMapping("/home")
     public RespBean listAllMst() {
         return manicuristsService.listAll();
     }
