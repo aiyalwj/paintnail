@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 
 /**
- * @TableName Manicurists
+ * @TableName Manicurists 美甲师
  */
 @TableName(value = "Manicurists")
 public class Manicurists implements Serializable {

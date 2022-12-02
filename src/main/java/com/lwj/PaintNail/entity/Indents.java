@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 
- * @TableName Indents
+ * @TableName Indents 预约表
  */
 @TableName(value ="Indents")
 public class Indents implements Serializable {

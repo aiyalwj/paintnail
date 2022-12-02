@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 
- * @TableName Apply
+ * @TableName Apply 申请
  */
 @TableName(value ="Apply")
 public class Apply implements Serializable {
