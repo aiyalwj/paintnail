@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 
- * @TableName Projects
+ * @TableName Projects 项目表
  */
 @TableName(value ="Projects")
 public class Projects implements Serializable {

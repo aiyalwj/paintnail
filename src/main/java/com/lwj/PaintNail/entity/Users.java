@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @TableName Users
+ * @TableName Users 用户
  */
 @TableName(value ="Users")
 public class Users implements Serializable {

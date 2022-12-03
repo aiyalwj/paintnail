@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @TableName Administrators
+ * @TableName Administrators 管理员表
  */
 @TableName(value ="Administrators")
 public class Administrators implements Serializable {

@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 
- * @TableName AvailableTime
+ * @TableName AvailableTime 可用时段表
  */
 @TableName(value ="AvailableTime")
 public class Availabletime implements Serializable {

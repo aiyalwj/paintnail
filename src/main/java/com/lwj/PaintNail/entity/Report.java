@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 
- * @TableName Report
+ * @TableName Report 举报表
  */
 @TableName(value ="Report")
 public class Report implements Serializable {

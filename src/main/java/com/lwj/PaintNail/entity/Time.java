@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 
- * @TableName Time
+ * @TableName Time 时段
  */
 @TableName(value ="Time")
 public class Time implements Serializable {
