@@ -15,4 +15,12 @@
         Post_id,User_id,Post_contents,
         Post_date,Post_images
     </sql>
+
+    <select id="listAll" resultType="com.lwj.PaintNail.entity.Posts">
+        select * from Posts
+    </select>
+
+    <select id="selectByPostId" resultType="com.lwj.PaintNail.entity.Posts">
+        select * from Posts where Post_id = #{Post_id}
+    </select>
 </mapper>

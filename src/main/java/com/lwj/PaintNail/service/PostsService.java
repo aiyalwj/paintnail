@@ -1,5 +1,6 @@
 package com.lwj.PaintNail.service;
 
+import com.lwj.PaintNail.dto.RespBean;
 import com.lwj.PaintNail.entity.Posts;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface PostsService extends IService<Posts> {
 
+    RespBean listAll();
+
+    RespBean enterPost(String Post_id);
 }
