@@ -2,6 +2,7 @@ package com.lwj.PaintNail.mapper;
 
 import com.lwj.PaintNail.entity.Posts;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -16,7 +17,12 @@ import java.util.List;
 public interface PostsMapper extends BaseMapper<Posts> {
 
     List<Posts> listAll();
+
     Posts selectByPostId(String Post_id);
+
+    void updateLikesByPostId(String post_id);
+
+    void Posting(String Post_id, String User_id, String Post_contents, DateTimeLiteralExpression.DateTime Post_date, Integer Post_likes, String Post_images);
 }
 
 
