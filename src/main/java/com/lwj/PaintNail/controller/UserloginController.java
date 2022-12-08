@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
-@Api(value = "用户登录、注册")
+@Api(tags = "用户登录、注册")
 @RequestMapping("/user")
-public class UserLoginController {
+public class UserloginController {
 
     @Autowired
     private UsersService usersService;

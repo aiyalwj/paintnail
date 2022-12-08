@@ -63,36 +63,8 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="Administrators" />
-                  <option name="tableName" value="Administrators" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Availabletime" />
-                  <option name="tableName" value="AvailableTime" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Indents" />
-                  <option name="tableName" value="Indents" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Manicurists" />
-                  <option name="tableName" value="Manicurists" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Posts" />
-                  <option name="tableName" value="Posts" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Projects" />
-                  <option name="tableName" value="Projects" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Report" />
-                  <option name="tableName" value="Report" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Time" />
-                  <option name="tableName" value="Time" />
+                  <option name="className" value="Ava" />
+                  <option name="tableName" value="Ava" />
                 </TableUIInfo>
               </list>
             </option>

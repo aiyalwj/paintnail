@@ -13,17 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@Api(value = "美甲师")
+@Api(tags = "美甲师")
 @RequestMapping("/manicurist")
 public class ManicuristController {
     @Autowired
     private ManicuristsService manicuristsService;
 
     @ApiOperation(value="美甲师登录")
-
-    /*
-    @GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。
-     */
     @GetMapping(value = {"/login"})
 
     /*

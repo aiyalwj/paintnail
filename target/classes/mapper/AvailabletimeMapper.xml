@@ -7,12 +7,10 @@
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Availabletime">
             <id property="timeId" column="Time_id" jdbcType="INTEGER"/>
             <id property="manicuristId" column="Manicurist_id" jdbcType="INTEGER"/>
-            <result property="availabletimeDate" column="AvailableTime_date" jdbcType="DATE"/>
             <result property="availabletimeState" column="AvailableTime_state" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        Time_id,Manicurist_id,AvailableTime_date,
-        AvailableTime_state
+        Time_id,Manicurist_id,AvailableTime_state
     </sql>
 </mapper>

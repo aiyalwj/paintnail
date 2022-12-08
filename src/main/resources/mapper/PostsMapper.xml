@@ -5,14 +5,16 @@
 <mapper namespace="com.lwj.PaintNail.mapper.PostsMapper">
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Posts">
-            <id property="postId" column="Post_id" jdbcType="INTEGER"/>
-            <result property="userId" column="User_id" jdbcType="INTEGER"/>
+            <id property="postId" column="Post_id" jdbcType="VARCHAR"/>
+            <result property="userId" column="User_id" jdbcType="VARCHAR"/>
             <result property="postContents" column="Post_contents" jdbcType="VARCHAR"/>
             <result property="postDate" column="Post_date" jdbcType="TIMESTAMP"/>
+            <result property="postLikes" column="Post_likes" jdbcType="INTEGER"/>
+            <result property="postImages" column="Post_images" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         Post_id,User_id,Post_contents,
-        Post_date,Post_images
+        Post_date,Post_likes,Post_images
     </sql>
 </mapper>

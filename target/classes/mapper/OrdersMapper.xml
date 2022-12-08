@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwj.PaintNail.mapper.OrdersMapper">
+
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Orders">
+            <result property="manicuristAccount" column="Manicurist_account" jdbcType="VARCHAR"/>
+            <result property="indentState" column="Indent_state" jdbcType="VARCHAR"/>
+            <result property="projectName" column="Project_name" jdbcType="VARCHAR"/>
+            <result property="projectCost" column="Project_cost" jdbcType="INTEGER"/>
+            <result property="indentStart" column="Indent_start" jdbcType="TIMESTAMP"/>
+            <result property="manicuristAddress" column="Manicurist_address" jdbcType="VARCHAR"/>
+            <result property="indentId" column="Indent_id" jdbcType="VARCHAR"/>
+            <result property="indentEnd" column="Indent_end" jdbcType="TIMESTAMP"/>
+            <result property="userAccount" column="User_account" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Manicurist_account,Indent_state,Project_name,
+        Project_cost,Indent_start,Manicurist_address,
+        Indent_id,Indent_end,User_account
+    </sql>
+    <select id="listCount" resultType="java.lang.Integer">
+        select count(DISTINCT User_account)
+        from Orders
+        where Manicurist_account = #{maccount}
+        and Indent_state = '已预约'
+    </select>
+    <select id="listOrd1" resultType="com.lwj.PaintNail.entity.Orders">
+        select *
+        from Orders
+        where User_account = #{account}
+        order by Indent_start desc
+    </select>
+    <select id="listOrdSim" resultType="com.lwj.PaintNail.entity.Orders">
+        select Manicurist_account,Indent_state,Indent_start,Manicurist_address
+        from Orders
+        where User_account = #{account}
+        order by Indent_start desc
+    </select>
+    <select id="listOrd2" resultType="com.lwj.PaintNail.entity.Orders">
+        select *
+        from Orders
+        where User_account = #{account}
+        and Indent_start = #{datetime}
+        order by Indent_start desc
+    </select>
+
+
+</mapper>

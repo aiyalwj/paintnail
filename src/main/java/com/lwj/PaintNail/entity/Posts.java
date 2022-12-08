@@ -1,15 +1,15 @@
 package com.lwj.PaintNail.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 
- * @TableName Posts 帖子表
+ * @TableName Posts
  */
 @TableName(value ="Posts")
 public class Posts implements Serializable {
@@ -36,6 +36,12 @@ public class Posts implements Serializable {
      */
     @TableField(value = "Post_date")
     private Date postDate;
+
+    /**
+     * 
+     */
+    @TableField(value = "Post_likes")
+    private Integer postLikes;
 
     /**
      * 
@@ -105,6 +111,20 @@ public class Posts implements Serializable {
     /**
      * 
      */
+    public Integer getPostLikes() {
+        return postLikes;
+    }
+
+    /**
+     * 
+     */
+    public void setPostLikes(Integer postLikes) {
+        this.postLikes = postLikes;
+    }
+
+    /**
+     * 
+     */
     public String getPostImages() {
         return postImages;
     }
@@ -114,16 +134,5 @@ public class Posts implements Serializable {
      */
     public void setPostImages(String postImages) {
         this.postImages = postImages;
-    }
-
-    @Override
-    public String toString() {
-        return "Posts{" +
-                "postId='" + postId + '\'' +
-                ", userId='" + userId + '\'' +
-                ", postContents='" + postContents + '\'' +
-                ", postDate=" + postDate +
-                ", postImages='" + postImages + '\'' +
-                '}';
     }
 }

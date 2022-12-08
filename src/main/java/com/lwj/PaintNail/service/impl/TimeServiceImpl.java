@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
 * @author wz111
 * @description 针对表【Time】的数据库操作Service实现
-* @createDate 2022-11-16 12:00:26
+* @createDate 2022-12-05 16:48:51
 */
 @Service
 public class TimeServiceImpl extends ServiceImpl<TimeMapper, Time>

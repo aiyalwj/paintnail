@@ -1,15 +1,15 @@
 package com.lwj.PaintNail.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 
- * @TableName Projects 项目表
+ * @TableName Projects
  */
 @TableName(value ="Projects")
 public class Projects implements Serializable {
@@ -28,8 +28,14 @@ public class Projects implements Serializable {
     /**
      * 
      */
+    @TableField(value = "Manicurist_name")
+    private String manicuristName;
+
+    /**
+     * 
+     */
     @TableField(value = "Project_cost")
-    private String projectCost;
+    private Integer projectCost;
 
     /**
      * 
@@ -89,14 +95,22 @@ public class Projects implements Serializable {
     /**
      * 
      */
-    public String getProjectCost() {
-        return projectCost;
+    public String getManicuristName() {
+        return manicuristName;
     }
 
     /**
      * 
      */
-    public void setProjectCost(String projectCost) {
+    public void setManicuristName(String manicuristName) {
+        this.manicuristName = manicuristName;
+    }
+
+    public Integer getProjectCost() {
+        return projectCost;
+    }
+
+    public void setProjectCost(Integer projectCost) {
         this.projectCost = projectCost;
     }
 
@@ -161,7 +175,8 @@ public class Projects implements Serializable {
         return "Projects{" +
                 "projectId='" + projectId + '\'' +
                 ", manicuristId='" + manicuristId + '\'' +
-                ", projectCost='" + projectCost + '\'' +
+                ", manicuristName='" + manicuristName + '\'' +
+                ", projectCost=" + projectCost +
                 ", projectName='" + projectName + '\'' +
                 ", projectTime=" + projectTime +
                 ", projectContent='" + projectContent + '\'' +
