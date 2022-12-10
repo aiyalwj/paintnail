@@ -16,7 +16,7 @@
         Post_date,Post_images
     </sql>
     <insert id="Posting">
-        insert into Posts(Post_id, User_id, Post_contents, Post_date, Post_likes, Post_images) values (#{Post_id},#{User_id}, #{Post_contents}, null, 0, #{Post_images})
+        insert into Posts(Post_id, User_id, Post_contents, Post_date, Post_likes, Post_images) values (#{Post_id},#{User_id}, #{Post_contents}, #{Post_date}, 0, #{Post_images})
     </insert>
 
     <update id="updateLikesByPostId">
