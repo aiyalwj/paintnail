@@ -6,6 +6,7 @@ spring:
     username: root
     password: csm123456
 
+
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
   type-aliases-package: com.lwj.PaintNail.entity

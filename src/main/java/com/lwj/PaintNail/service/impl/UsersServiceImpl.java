@@ -7,7 +7,6 @@ import com.lwj.PaintNail.entity.Users;
 import com.lwj.PaintNail.service.UsersService;
 import com.lwj.PaintNail.mapper.UsersMapper;
 import com.lwj.PaintNail.utils.MD5Utils;
-import com.lwj.PaintNail.utils.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,7 +40,6 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
             return RespBean.error(RespBeanEnum.USER_ACCOUNT_NOT_FOUND);
         }
         Users user=new Users();
-        user.setUserId(RandomUtils.generateTicket());
         user.setUserAccount(account);
         user.setUserPwd(pwd);
         user.setUserPhone(phone);
@@ -72,8 +70,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
         }
 
         //加密
-//        if(!MD5Utils.inputPassToDBPass(password,user.getSalt()).equals(user.getUserPwd())) {
-        if(!password.equals(user.getUserPwd())) {
+        if(!MD5Utils.inputPassToDBPass(password,user.getSalt()).equals(user.getUserPwd())) {
             return RespBean.error(RespBeanEnum.LOGIN_ERROR);
         }
         return RespBean.success(user);

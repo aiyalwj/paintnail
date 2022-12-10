@@ -5,7 +5,7 @@
 <mapper namespace="com.lwj.PaintNail.mapper.TimeMapper">
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Time">
-            <id property="timeId" column="Time_id" jdbcType="VARCHAR"/>
+            <id property="timeId" column="Time_id" jdbcType="INTEGER"/>
             <result property="timeName" column="Time_name" jdbcType="VARCHAR"/>
             <result property="timeStart" column="Time_start" jdbcType="TIMESTAMP"/>
     </resultMap>

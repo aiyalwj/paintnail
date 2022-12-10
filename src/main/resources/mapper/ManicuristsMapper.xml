@@ -4,43 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lwj.PaintNail.mapper.ManicuristsMapper">
 
-<!--    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Manicurists">-->
-<!--            <id property="manicuristId" column="Manicurist_id" jdbcType="VARCHAR"/>-->
-<!--            <result property="manicuristAccount" column="Manicurist_account" jdbcType="VARCHAR"/>-->
-<!--            <result property="userId" column="User_id" jdbcType="VARCHAR"/>-->
-<!--            <result property="manicuristAddress" column="Manicurist_address" jdbcType="VARCHAR"/>-->
-<!--            <result property="manicuristImages" column="Manicurist_images" jdbcType="VARCHAR"/>-->
-<!--            <result property="manicuristPhone" column="Manicurist_phone" jdbcType="VARCHAR"/>-->
-<!--            <result property="manicuristProfile" column="Manicurist_profile" jdbcType="VARCHAR"/>-->
-<!--    </resultMap>-->
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Manicurists">
+            <id property="manicuristId" column="Manicurist_id" jdbcType="INTEGER"/>
+            <result property="userId" column="User_id" jdbcType="INTEGER"/>
+            <result property="manicuristAddress" column="Manicurist_address" jdbcType="VARCHAR"/>
+    </resultMap>
 
-<!--    <sql id="Base_Column_List">-->
-<!--        Manicurist_id,Manicurist_account,User_id,-->
-<!--        Manicurist_address,Manicurist_images,Manicurist_phone,-->
-<!--        Manicurist_profile-->
-<!--    </sql>-->
-
+    <sql id="Base_Column_List">
+        Manicurist_id,Manicurist_account,User_id,Manicurist_address,Manicurist_images
+    </sql>
     <select id="selectManicuristsById" resultType="com.lwj.PaintNail.entity.Manicurists">
-        select * from Manicurists where Manicurist_id = #{mid}
+        select * from Manicurists where Manicurist_id = #{id}
     </select>
     <select id="selectManicuristsByAccount" resultType="com.lwj.PaintNail.entity.Manicurists">
         select * from Manicurists where Manicurist_account = #{account}
     </select>
     <select id="listAll" resultType="com.lwj.PaintNail.entity.Manicurists">
-        select Manicurist_id,Manicurist_profile,Manicurist_account,Manicurist_address,Manicurist_phone,Manicurist_images from Manicurists
+        select * from Manicurists
     </select>
-
-    <select id="listMstInfo" resultType="com.lwj.PaintNail.entity.Manicurists">
-        select * from Manicurists where Manicurist_id = #{mid}
-    </select>
-
-    <select id="listMstPro" resultType="com.lwj.PaintNail.entity.Projects">
-        select * from Projects where Manicurist_id = #{mid}
-    </select>
-
-    <select id="listAvaTimeByMId" resultType="com.lwj.PaintNail.entity.Availabletime">
-        select * from AvailableTime where Manicurist_id = #{mid} and AvailableTime_state = '1'
-    </select>
-
-
 </mapper>

@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
-@Api(tags = "用户登录、注册")
+@Api(value = "用户登录、注册")
 @RequestMapping("/user")
-public class UserloginController {
+public class UserLoginController {
 
     @Autowired
     private UsersService usersService;
@@ -27,6 +27,7 @@ public class UserloginController {
     @GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。
      */
     @GetMapping(value = {"/login"})
+
     /*
     @RequestParam把请求中的指定名称的参数传递给控制器中的形参赋值
      */

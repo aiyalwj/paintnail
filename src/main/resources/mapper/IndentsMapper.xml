@@ -5,24 +5,19 @@
 <mapper namespace="com.lwj.PaintNail.mapper.IndentsMapper">
 
     <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Indents">
-            <id property="userId" column="User_id" jdbcType="VARCHAR"/>
-            <id property="timeId" column="Time_id" jdbcType="VARCHAR"/>
+            <id property="indentNo" column="Indent_no" jdbcType="INTEGER"/>
+            <id property="userId" column="User_id" jdbcType="INTEGER"/>
+            <id property="timeId" column="Time_id" jdbcType="INTEGER"/>
             <id property="projectId" column="Project_id" jdbcType="VARCHAR"/>
-            <id property="manicuristId" column="Manicurist_id" jdbcType="VARCHAR"/>
-            <id property="indentId" column="Indent_id" jdbcType="VARCHAR"/>
+            <id property="manicuristId" column="Manicurist_id" jdbcType="INTEGER"/>
             <result property="indentState" column="Indent_state" jdbcType="VARCHAR"/>
             <result property="indentStart" column="Indent_start" jdbcType="TIMESTAMP"/>
             <result property="indentEnd" column="Indent_end" jdbcType="TIMESTAMP"/>
-            <result property="indentComment" column="Indent_comment" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         User_id,Time_id,Project_id,
-        Manicurist_id,Indent_id,Indent_state,
+        Manicurist_id,Indent_no,Indent_state,
         Indent_start,Indent_end,Indent_comment
     </sql>
-    <insert id="insertIndents">
-        insert into Indents(User_id, Time_id, Project_id, Manicurist_id, Indent_id, Indent_state, Indent_start, Indent_end, Indent_comment)
-        values (#{id},#{tid},#{pid},#{mid},#{Iid},'已预约',#{starttime},null,null)
-    </insert>
 </mapper>
