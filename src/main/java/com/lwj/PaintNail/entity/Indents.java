@@ -3,7 +3,6 @@ package com.lwj.PaintNail.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -40,8 +39,8 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    @TableField(value = "Indent_no")
-    private String indentNo;
+    @TableId(value = "Indent_id")
+    private String indentId;
 
     /**
      * 
@@ -129,15 +128,15 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    public String getIndentNo() {
-        return indentNo;
+    public String getIndentId() {
+        return indentId;
     }
 
     /**
      * 
      */
-    public void setIndentNo(String indentNo) {
-        this.indentNo = indentNo;
+    public void setIndentId(String indentId) {
+        this.indentId = indentId;
     }
 
     /**
@@ -203,7 +202,7 @@ public class Indents implements Serializable {
                 ", timeId='" + timeId + '\'' +
                 ", projectId='" + projectId + '\'' +
                 ", manicuristId='" + manicuristId + '\'' +
-                ", indentNo='" + indentNo + '\'' +
+                ", indentId='" + indentId + '\'' +
                 ", indentState='" + indentState + '\'' +
                 ", indentStart=" + indentStart +
                 ", indentEnd=" + indentEnd +

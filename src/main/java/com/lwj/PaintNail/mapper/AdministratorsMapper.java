@@ -21,7 +21,6 @@ public interface AdministratorsMapper extends BaseMapper<Administrators> {
     Administrators selectAdministratorByName(@Param("name") String name);
 
     List<Administrators> listAll();
-    //jkjlkjl
 }
 
 

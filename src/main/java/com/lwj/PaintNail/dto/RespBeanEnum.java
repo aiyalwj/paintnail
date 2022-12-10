@@ -21,7 +21,6 @@ public enum RespBeanEnum {
 
     //账号 输入错误 没有找到
     USER_ACCOUNT_NOT_FOUND(4002,"该用户不存在！","error"),
-
     //美甲师账号 输入错误 没有找到
     MANICURIST_ACCOUNT_NOT_FOUND(4012,"该美甲师不存在！","error"),
 
@@ -30,7 +29,6 @@ public enum RespBeanEnum {
 
     //用户账号account 不能为空
     USER_ACCOUNT_EMPTY(4004,"用户账号不能为空！","warning"),
-
     //美甲师账号account 不能为空
     MANICURIST_ACCOUNT_EMPTY(4014,"美甲师账号不能为空！","warning");
 

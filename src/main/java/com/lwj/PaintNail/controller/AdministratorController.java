@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api(value = "管理员登录、注册")
+@Api(tags = "管理员登录、注册")
 @RequestMapping({"/administrator"})
 public class AdministratorController {
     private static final Logger log = LoggerFactory.getLogger(AdministratorController.class);

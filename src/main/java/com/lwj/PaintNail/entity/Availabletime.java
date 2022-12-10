@@ -25,11 +25,7 @@ public class Availabletime implements Serializable {
     @TableId(value = "Manicurist_id")
     private String manicuristId;
 
-    /**
-     * 
-     */
-    @TableField(value = "AvailableTime_date")
-    private Date availabletimeDate;
+
 
     /**
      * 
@@ -68,19 +64,7 @@ public class Availabletime implements Serializable {
         this.manicuristId = manicuristId;
     }
 
-    /**
-     * 
-     */
-    public Date getAvailabletimeDate() {
-        return availabletimeDate;
-    }
 
-    /**
-     * 
-     */
-    public void setAvailabletimeDate(Date availabletimeDate) {
-        this.availabletimeDate = availabletimeDate;
-    }
 
     /**
      * 
@@ -101,7 +85,6 @@ public class Availabletime implements Serializable {
         return "Availabletime{" +
                 "timeId='" + timeId + '\'' +
                 ", manicuristId='" + manicuristId + '\'' +
-                ", availabletimeDate=" + availabletimeDate +
                 ", availabletimeState='" + availabletimeState + '\'' +
                 '}';
     }

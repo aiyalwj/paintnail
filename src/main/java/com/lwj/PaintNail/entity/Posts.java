@@ -3,7 +3,6 @@ package com.lwj.PaintNail.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -36,6 +35,12 @@ public class Posts implements Serializable {
      */
     @TableField(value = "Post_date")
     private Date postDate;
+
+    /**
+     *
+     */
+    @TableField(value = "Post_likes")
+    private Integer postLikes;
 
     /**
      * 
@@ -100,6 +105,20 @@ public class Posts implements Serializable {
      */
     public void setPostDate(Date postDate) {
         this.postDate = postDate;
+    }
+
+    /**
+     *
+     */
+    public Integer getPostLikes() {
+        return postLikes;
+    }
+
+    /**
+     *
+     */
+    public void setPostLikes(Integer postLikes) {
+        this.postLikes = postLikes;
     }
 
     /**

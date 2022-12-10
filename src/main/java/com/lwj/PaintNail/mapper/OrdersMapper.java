@@ -2,7 +2,6 @@ package com.lwj.PaintNail.mapper;
 
 import com.lwj.PaintNail.entity.Orders;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.sun.org.apache.xpath.internal.operations.Or;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

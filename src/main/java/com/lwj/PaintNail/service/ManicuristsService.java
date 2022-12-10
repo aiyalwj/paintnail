@@ -13,5 +13,9 @@ public interface ManicuristsService extends IService<Manicurists> {
     RespBean doLogin(String account,String password);
 
     RespBean listAll();
-    RespBean getManicuristsInfo(String account);
+
+    RespBean listMstInfo(String id);
+    RespBean listMstPro(String id);
+    RespBean listAvaTime(String id);
+
 }

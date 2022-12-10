@@ -2,10 +2,7 @@ package com.lwj.PaintNail.mapper;
 
 import com.lwj.PaintNail.entity.Posts;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.sql.Timestamp;
 import java.util.List;
 
 /**
