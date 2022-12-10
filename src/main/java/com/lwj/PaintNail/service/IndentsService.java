@@ -9,5 +9,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-11-16 12:00:26
 */
 public interface IndentsService extends IService<Indents> {
-
+    String createIndent(Indents indents);
 }

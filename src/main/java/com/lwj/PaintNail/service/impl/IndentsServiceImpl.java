@@ -5,6 +5,7 @@ import com.lwj.PaintNail.entity.Indents;
 import com.lwj.PaintNail.service.IndentsService;
 import com.lwj.PaintNail.mapper.IndentsMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
 * @author wz111
@@ -14,7 +15,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class IndentsServiceImpl extends ServiceImpl<IndentsMapper, Indents>
     implements IndentsService{
-
+    @Override
+    @Transactional
+    public String createIndent(Indents indents) {
+        return null;
+    }
 }
 
 

@@ -31,32 +31,35 @@ public class HomeController {
     }
 
     @ApiOperation(value = "列出某美甲师详细信息")
-    @GetMapping("/{mid}/MstInfo")
-    public RespBean listMstInfo(@PathVariable("mid") String mid){
+    @GetMapping("/MstInfo")
+//    public RespBean listMstInfo(@PathVariable("mid") String mid){
+//        return manicuristsService.listMstInfo(mid);
+//    }
+    public RespBean listMstInfo(@RequestParam("mid") String mid){
         return manicuristsService.listMstInfo(mid);
     }
 
     @ApiOperation(value = "列出某美甲师项目")
-    @GetMapping("/{mid}/Project")
+    @GetMapping("/Project/{mid}")
     public RespBean listMstProject(@PathVariable("mid") String mid){
         return manicuristsService.listMstPro(mid);
     }
 
     @ApiOperation(value = "列出预约人数")
-    @GetMapping("/{maccount}/Project/count")
+    @GetMapping("Project/count/{maccount}")
     public RespBean listMstProjectCount(@PathVariable("maccount") String maccount){
         return ordersService.listCount(maccount);
     }
 
     @ApiOperation(value = "列出某美甲师所有可用时间")
-    @GetMapping("/{mid}/AvaTime")
+    @GetMapping("/AvaTime/{mid}")
     @ResponseBody
     public RespBean listAvaTime(@PathVariable("mid") String mid){
         return avaService.listAvaTime(mid);
     }
 
     @ApiOperation(value = "列出订单信息")
-    @GetMapping("/{uaccount}/Order")
+    @GetMapping("/Order/{uaccount}")
     public RespBean listIndent(@PathVariable("uaccount") String uaccount){
         return ordersService.listOrder(uaccount);
     }

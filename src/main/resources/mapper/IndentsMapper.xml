@@ -21,4 +21,8 @@
         Manicurist_id,Indent_id,Indent_state,
         Indent_start,Indent_end,Indent_comment
     </sql>
+    <insert id="insertIndents">
+        insert into Indents(User_id, Time_id, Project_id, Manicurist_id, Indent_id, Indent_state, Indent_start, Indent_end, Indent_comment)
+        values (#{id},#{tid},#{pid},#{mid},#{Iid},'已预约',#{starttime},null,null)
+    </insert>
 </mapper>
