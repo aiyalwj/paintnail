@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwj.PaintNail.mapper.PostsMapper">
+
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Posts">
+            <id property="postId" column="Post_id" jdbcType="INTEGER"/>
+            <result property="userId" column="User_id" jdbcType="INTEGER"/>
+            <result property="postContents" column="Post_contents" jdbcType="VARCHAR"/>
+            <result property="postDate" column="Post_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Post_id,User_id,Post_contents,
+        Post_date,Post_images
+    </sql>
+    <insert id="Posting">
+        insert into Posts(Post_id, User_id, Post_contents, Post_date, Post_likes, Post_images) values (#{Post_id},#{User_id}, #{Post_contents}, #{Post_date}, 0, #{Post_images})
+    </insert>
+
+    <update id="updateLikesByPostId">
+        update Posts set Post_likes = Post_likes + 1 where Post_id = #{Post_id}
+    </update>
+
+    <select id="listAll" resultType="com.lwj.PaintNail.entity.Posts">
+        select * from Posts
+    </select>
+
+    <select id="selectByPostId" resultType="com.lwj.PaintNail.entity.Posts">
+        select * from Posts where Post_id = #{Post_id}
+    </select>
+</mapper>

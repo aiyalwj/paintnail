@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwj.PaintNail.mapper.ApplyMapper">
+
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Apply">
+            <id property="applyId" column="Apply_id" jdbcType="INTEGER"/>
+            <result property="userId" column="User_id" jdbcType="INTEGER"/>
+            <result property="applyTime" column="Apply_time" jdbcType="TIMESTAMP"/>
+            <result property="applyVideo" column="Apply_video" jdbcType="VARCHAR"/>
+            <result property="applyState" column="Apply_state" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Apply_id,User_id,Apply_time,
+        Apply_video,Apply_state
+    </sql>
+</mapper>
