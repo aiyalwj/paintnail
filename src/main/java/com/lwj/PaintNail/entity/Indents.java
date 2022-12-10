@@ -1,15 +1,15 @@
 package com.lwj.PaintNail.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 
- * @TableName Indents
+ * @TableName Indents 预约表
  */
 @TableName(value ="Indents")
 public class Indents implements Serializable {
@@ -40,8 +40,8 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    @TableId(value = "Indent_id")
-    private String indentId;
+    @TableField(value = "Indent_no")
+    private String indentNo;
 
     /**
      * 
@@ -129,15 +129,15 @@ public class Indents implements Serializable {
     /**
      * 
      */
-    public String getIndentId() {
-        return indentId;
+    public String getIndentNo() {
+        return indentNo;
     }
 
     /**
      * 
      */
-    public void setIndentId(String indentId) {
-        this.indentId = indentId;
+    public void setIndentNo(String indentNo) {
+        this.indentNo = indentNo;
     }
 
     /**
@@ -194,5 +194,20 @@ public class Indents implements Serializable {
      */
     public void setIndentComment(String indentComment) {
         this.indentComment = indentComment;
+    }
+
+    @Override
+    public String toString() {
+        return "Indents{" +
+                "userId='" + userId + '\'' +
+                ", timeId='" + timeId + '\'' +
+                ", projectId='" + projectId + '\'' +
+                ", manicuristId='" + manicuristId + '\'' +
+                ", indentNo='" + indentNo + '\'' +
+                ", indentState='" + indentState + '\'' +
+                ", indentStart=" + indentStart +
+                ", indentEnd=" + indentEnd +
+                ", indentComment='" + indentComment + '\'' +
+                '}';
     }
 }

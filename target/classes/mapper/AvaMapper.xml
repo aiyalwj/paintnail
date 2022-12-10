@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwj.PaintNail.mapper.AvaMapper">
+
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Ava">
+            <result property="timeStart" column="Time_start" jdbcType="TIME"/>
+            <result property="manicuristId" column="Manicurist_id" jdbcType="VARCHAR"/>
+            <result property="availabletimeState" column="AvailableTime_state" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Time_start,Manicurist_id,AvailableTime_state
+    </sql>
+    <select id="avaList" resultType="com.lwj.PaintNail.entity.Ava">
+        select * from Ava where Manicurist_id = #{mid} and AvailableTime_state = '1'
+    </select>
+</mapper>

@@ -3,11 +3,11 @@ package com.lwj.PaintNail.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lwj.PaintNail.dto.RespBean;
 import com.lwj.PaintNail.dto.RespBeanEnum;
-import com.lwj.PaintNail.entity.Availabletime;
 import com.lwj.PaintNail.entity.Manicurists;
-import com.lwj.PaintNail.entity.Projects;
+import com.lwj.PaintNail.entity.Users;
 import com.lwj.PaintNail.service.ManicuristsService;
 import com.lwj.PaintNail.mapper.ManicuristsMapper;
+import com.lwj.PaintNail.utils.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,34 +49,15 @@ public class ManicuristsServiceImpl extends ServiceImpl<ManicuristsMapper, Manic
     @Override
     @Transactional
     public RespBean listAll() {
-        List<Manicurists> manicuristsList = manicuristsMapper.listAll();
-        return RespBean.success(manicuristsList);
+        List<Manicurists> Listmanicurists = manicuristsMapper.listAll();
+        return RespBean.success(Listmanicurists);
     }
 
     @Override
     @Transactional
-    public RespBean listMstInfo(String id) {
-        Manicurists manicurists = manicuristsMapper.listMstInfo(id);
-        return RespBean.success(manicurists);
+    public RespBean getManicuristsInfo(String account) {
+        return null;
     }
-
-    @Override
-    @Transactional
-    public RespBean listMstPro(String id) {
-        List<Projects> projectsList = manicuristsMapper.listMstPro(id);
-        return RespBean.success(projectsList);
-    }
-
-    @Override
-    @Transactional
-    public RespBean listAvaTime(String id) {
-        List<Availabletime> availabletimeList = manicuristsMapper.listAvaTimeByMId(id);
-        return RespBean.success(availabletimeList);
-    }
-
-
-
-
 }
 
 

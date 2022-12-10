@@ -1,53 +1,47 @@
 package com.lwj.PaintNail;
 
 import com.lwj.PaintNail.dto.RespBean;
+import com.lwj.PaintNail.dto.RespBeanEnum;
+import com.lwj.PaintNail.entity.Administrators;
 import com.lwj.PaintNail.entity.Manicurists;
-import com.lwj.PaintNail.entity.Orders;
+import com.lwj.PaintNail.entity.Users;
+import com.lwj.PaintNail.mapper.AdministratorsMapper;
 import com.lwj.PaintNail.mapper.ManicuristsMapper;
-import com.lwj.PaintNail.mapper.OrdersMapper;
-import com.lwj.PaintNail.service.ManicuristsService;
-import com.lwj.PaintNail.service.OrdersService;
+import com.lwj.PaintNail.mapper.UsersMapper;
+import com.lwj.PaintNail.utils.MD5Utils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 @SpringBootTest
-@EnableTransactionManagement
 class PaintNailApplicationTests {
-
-    @Autowired
-    private ManicuristsMapper manicuristsMapper;
-
-    @Autowired
-    private OrdersService ordersService;
-    @Test
-    void contextLoads(){
-        Manicurists manicurists=manicuristsMapper.selectManicuristsById("10001");
-        System.out.println(manicurists.getManicuristAccount());
-
-//        if(!"123456".equals(administrators.getAdministratorPwd())) {
-//            System.out.println("密码错误");
-//        }else{
-//            System.out.println("密码正确");
-//        }
-    }
-
-    @Test
-    void TestOrder(){
-        System.out.println(ordersService.listOrder("lwj"));
-//        for(int i=0; i<ordersList.size(); i++){
-//            System.out.println(ordersList.get(i).getIndentStart());
+//    @Autowired
+//    private AdministratorsMapper administratorsMapper;
+//    @Autowired
+//    private UsersMapper usersMapper;
 //
-//        }
-    }
-
-    @Test
-    void TestCount(){
-        System.out.println(ordersService.listCount("mlwj"));
+//    @Autowired
+//    private ManicuristsMapper manicuristsMapper;
+//
+//    @Test
+//    void contextLoads(){
+////        Administrators administrators=administratorsMapper.selectAdministratorById("00001");
+////        Administrators administrators=administratorsMapper.selectAdministratorByName("lwj");
+////        System.out.println(administrators);
+//        Manicurists manicurists=manicuristsMapper.selectManicuristsById("10000001");
+//        System.out.println(manicurists);
+//
+////        if(!"123456".equals(administrators.getAdministratorPwd())) {
+////            System.out.println("密码错误");
+////        }else{
+////            System.out.println("密码正确");
+////        }
+//    }
+    public static void main(String[] args){
+        SpringApplication.run(PaintNailApplication.class, args);
     }
 }
