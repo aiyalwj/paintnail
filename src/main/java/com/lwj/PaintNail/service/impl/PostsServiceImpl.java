@@ -48,7 +48,7 @@ public class PostsServiceImpl extends ServiceImpl<PostsMapper, Posts>
 
     @Override
     @Transactional
-    public RespBean Posting(String Post_id, String User_id, String Post_contents,
+    public RespBean Posting(String Post_id, String User_id, String Post_introduction, String Post_contents,
                             java.sql.Timestamp Post_date, int Post_likes, String Post_images){
         postsMapper.Posting(Post_id, User_id, Post_contents, Post_date, Post_likes, Post_images);
         return  RespBean.success(RespBeanEnum.SUCCESS);

@@ -25,6 +25,12 @@ public class Posts implements Serializable {
     private String userId;
 
     /**
+     *
+     */
+    @TableField(value = "Post_introduction")
+    private String postIntroduction;
+
+    /**
      * 
      */
     @TableField(value = "Post_contents")
@@ -50,6 +56,14 @@ public class Posts implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    public String getPostIntroduction() {
+        return postIntroduction;
+    }
+
+    public void setPostIntroduction(String postIntroduction) {
+        this.postIntroduction = postIntroduction;
+    }
 
     /**
      * 
