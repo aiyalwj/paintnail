@@ -13,18 +13,26 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Slf4j
 @Api(tags = "我的信息")
-@RequestMapping("/Myinformation")
+@RequestMapping("/myinformation")
 public class MyinfoController {
     @Autowired
     private MyinfoService myinfoService;
     @Autowired
     private OrdersService ordersService;
+//    @Autowired
+//    private MycollectionService mycollectionService;
 
     @ApiOperation(value = "我的信息界面")
     @RequestMapping(method = RequestMethod.GET)
     public RespBean SelectMyinfoByUId(@RequestParam("User_id") String User_id){
         return myinfoService.SelectMyinfoByUId(User_id);
     }
+
+//    @ApiOperation(value = "我的收藏")
+//    @RequestMapping("/MyCollectioin")
+//    public RespBean ListAllCollection(@RequestParam("User_id") String User_id){
+//        return mycollectionService.ListAllCollection(User_id);
+//    }
 
     @ApiOperation(value = "列出简略订单信息")
     @GetMapping("/OrderSim/{account}")

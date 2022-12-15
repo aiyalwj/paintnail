@@ -1,14 +1,14 @@
 package com.lwj.PaintNail.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 
 /**
  * 
- * @TableName Users 用户
+ * @TableName Users
  */
 @TableName(value ="Users")
 public class Users implements Serializable {
@@ -43,9 +43,16 @@ public class Users implements Serializable {
     private String userSchool;
 
     /**
-     * 盐值 MD5加密
+     * 
      */
-    private String salt;
+    @TableField(value = "User_headportrait")
+    private String userHeadportrait;
+
+    /**
+     * 
+     */
+    @TableField(value = "User_background")
+    private String userBackground;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -120,22 +127,31 @@ public class Users implements Serializable {
         this.userSchool = userSchool;
     }
 
-    public String getSalt() {
-        return salt;
+    /**
+     * 
+     */
+    public String getUserHeadportrait() {
+        return userHeadportrait;
     }
 
-    public void setSalt(String salt) {
-        this.salt = salt;
+    /**
+     * 
+     */
+    public void setUserHeadportrait(String userHeadportrait) {
+        this.userHeadportrait = userHeadportrait;
     }
 
-    @Override
-    public String toString() {
-        return "Users{" +
-                "userId='" + userId + '\'' +
-                ", userAccount='" + userAccount + '\'' +
-                ", userPwd='" + userPwd + '\'' +
-                ", userPhone='" + userPhone + '\'' +
-                ", userSchool='" + userSchool + '\'' +
-                '}';
+    /**
+     * 
+     */
+    public String getUserBackground() {
+        return userBackground;
+    }
+
+    /**
+     * 
+     */
+    public void setUserBackground(String userBackground) {
+        this.userBackground = userBackground;
     }
 }

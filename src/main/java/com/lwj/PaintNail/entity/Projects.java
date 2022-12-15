@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -47,6 +49,7 @@ public class Projects implements Serializable {
      * 
      */
     @TableField(value = "Project_time")
+    @JsonFormat(pattern="HH:mm:ss",timezone = "GMT+8")
     private Date projectTime;
 
     /**
@@ -60,6 +63,9 @@ public class Projects implements Serializable {
      */
     @TableField(value = "Project_images")
     private String projectImages;
+
+    @TableField(value = "Service_type")
+    private String serviceType;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -170,6 +176,14 @@ public class Projects implements Serializable {
         this.projectImages = projectImages;
     }
 
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
     @Override
     public String toString() {
         return "Projects{" +
@@ -180,6 +194,7 @@ public class Projects implements Serializable {
                 ", projectName='" + projectName + '\'' +
                 ", projectTime=" + projectTime +
                 ", projectContent='" + projectContent + '\'' +
+                ", serviceType='" + serviceType + '\'' +
                 ", projectImages='" + projectImages + '\'' +
                 '}';
     }

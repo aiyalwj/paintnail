@@ -33,6 +33,9 @@ public class Availabletime implements Serializable {
     @TableField(value = "AvailableTime_state")
     private String availabletimeState;
 
+    @TableField(value ="Time_interval")
+    private String timeInterval;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
@@ -78,6 +81,14 @@ public class Availabletime implements Serializable {
      */
     public void setAvailabletimeState(String availabletimeState) {
         this.availabletimeState = availabletimeState;
+    }
+
+    public String getTimeInterval() {
+        return timeInterval;
+    }
+
+    public void setTimeInterval(String timeInterval) {
+        this.timeInterval = timeInterval;
     }
 
     @Override

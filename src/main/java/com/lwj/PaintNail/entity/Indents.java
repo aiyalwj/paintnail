@@ -3,6 +3,8 @@ package com.lwj.PaintNail.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -30,6 +32,8 @@ public class Indents implements Serializable {
     @TableId(value = "Project_id")
     private String projectId;
 
+    @TableId(value = "Project_idS")
+    private String projectIds;
     /**
      * 
      */
@@ -52,6 +56,7 @@ public class Indents implements Serializable {
      * 
      */
     @TableField(value = "Indent_start")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date indentStart;
 
     /**
@@ -195,12 +200,21 @@ public class Indents implements Serializable {
         this.indentComment = indentComment;
     }
 
+    public String getProjectIds() {
+        return projectIds;
+    }
+
+    public void setProjectIds(String projectIds) {
+        this.projectIds = projectIds;
+    }
+
     @Override
     public String toString() {
         return "Indents{" +
                 "userId='" + userId + '\'' +
                 ", timeId='" + timeId + '\'' +
                 ", projectId='" + projectId + '\'' +
+                ", projectIds='" + projectIds + '\'' +
                 ", manicuristId='" + manicuristId + '\'' +
                 ", indentId='" + indentId + '\'' +
                 ", indentState='" + indentState + '\'' +

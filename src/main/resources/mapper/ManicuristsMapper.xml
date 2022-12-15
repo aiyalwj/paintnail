@@ -41,6 +41,9 @@
     <select id="listAvaTimeByMId" resultType="com.lwj.PaintNail.entity.Availabletime">
         select * from AvailableTime where Manicurist_id = #{mid} and AvailableTime_state = '1'
     </select>
+    <select id="searchMst" resultType="com.lwj.PaintNail.entity.Manicurists">
+        select * from Manicurists where Manicurist_account like concat('%', #{account}, '%')
+    </select>
 
 
 </mapper>

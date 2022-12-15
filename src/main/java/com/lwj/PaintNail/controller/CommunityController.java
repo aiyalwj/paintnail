@@ -24,18 +24,31 @@ import static com.lwj.PaintNail.utils.RandomUtils.generateTicket;
 public class CommunityController {
     @Autowired
     private PostsService postsService;
+//    @Autowired
+//    private PostOutService postOutService;
+//    @Autowired
+//    private PostInnerService postInnerService;
+//    @Autowired
+//    private CollectionService collectionService;
 
-    @ApiOperation(value = "展示出当前帖子里的内容")
-    @RequestMapping(method = RequestMethod.GET)
-    public RespBean ListAllPosts() {
-        return postsService.listAll();
-    }
-
-    @ApiOperation(value = "进入一个帖子")
-    @RequestMapping("/EnterPost")
-    public RespBean EnterPost(@RequestParam("Post_id") String Post_id){
-        return postsService.enterPost(Post_id);
-    }
+//    @ApiOperation(value = "展示出社区里的所有帖子")
+//    @RequestMapping(method = RequestMethod.GET)
+//    public RespBean ListAllPosts() {
+//        return postOutService.listAll();
+//    }
+//
+//    @ApiOperation(value = "进入一个帖子")
+//    @RequestMapping("/EnterPost")
+//    public RespBean EnterPost(@RequestParam("Post_id") String Post_id){
+//        return postInnerService.enterPost(Post_id);
+//    }
+//
+//    @ApiOperation(value = "收藏一个帖子")
+//    @RequestMapping("/EnterPost/CollectPost")
+//    public RespBean CollectPost(@RequestParam("Post_id") String Post_id, @RequestParam("User_id") String User_id){
+//        String Collection_id = RandomUtils.generateTicket();
+//        return collectionService.CollectPost(Collection_id, Post_id, User_id);
+//    }
 
     @ApiOperation(value = "给一个帖子点赞")
     @RequestMapping("/LikePost")
@@ -45,16 +58,10 @@ public class CommunityController {
 
     @ApiOperation(value = "发帖")
     @RequestMapping("/Posting")
-    public RespBean Posting(@RequestParam("User_id") String User_id, @RequestParam("Post_contents") String Post_contents, @RequestParam("Post_images") String Post_images){
+    public RespBean Posting(@RequestParam("User_id") String User_id, @RequestParam("Post_introduction") String Post_introduction, @RequestParam("Post_contents") String Post_contents, @RequestParam("Post_images") String Post_images){
         java.sql.Timestamp Post_date = Getcurrenttime.getDate();//获取当前时间
         String Post_id = RandomUtils.generateTicket();
         Integer Post_likes = 0;
-//        System.out.println(User_id);
-//        System.out.println(Post_contents);
-//        System.out.println(Post_likes);
-//        System.out.println(Post_images);
-//        System.out.println(Post_date);
-//        System.out.println(Post_id);
-        return postsService.Posting(Post_id, User_id, Post_contents, Post_date, Post_likes, Post_images);
+        return postsService.Posting(Post_id, User_id, Post_introduction, Post_contents, Post_date, Post_likes, Post_images);
     }
 }

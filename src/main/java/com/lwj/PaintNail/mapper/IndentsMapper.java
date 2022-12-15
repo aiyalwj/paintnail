@@ -16,6 +16,8 @@ import java.util.Date;
 @Mapper
 public interface IndentsMapper extends BaseMapper<Indents> {
     void insertIndents(@Param("id") String id, @Param("tid") String tid, @Param("pid") String pid, @Param("mid") String mid, @Param("Iid") String Iid, @Param("starttime") Date starttime);
+
+    void updateTime(@Param("tid") String tid);
 }
 
 

@@ -20,7 +20,7 @@ import java.util.Calendar;
 @RestController
 @Slf4j
 @Api(value = "图片操作")
-@RequestMapping("/UploadPhotos")
+@RequestMapping("/uploadPhotos")
 public class UploadPhotosController {
 
     /**

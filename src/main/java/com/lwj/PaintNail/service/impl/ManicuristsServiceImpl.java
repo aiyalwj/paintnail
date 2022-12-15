@@ -75,6 +75,13 @@ public class ManicuristsServiceImpl extends ServiceImpl<ManicuristsMapper, Manic
         List<Availabletime> availabletimeList = manicuristsMapper.listAvaTimeByMId(id);
         return RespBean.success(availabletimeList);
     }
+
+    @Override
+    @Transactional
+    public RespBean searchMst(String maccount) {
+        List<Manicurists> manicuristsList = manicuristsMapper.searchMst(maccount);
+        return RespBean.success(manicuristsList);
+    }
 }
 
 

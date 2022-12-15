@@ -20,5 +20,5 @@ public interface PostsService extends IService<Posts> {
 
     RespBean LikePost(String Post_id);
 
-    RespBean Posting(String post_id, String user_id, String post_contents, java.sql.Timestamp post_date, int post_likes, String post_images);
+    RespBean Posting(String post_id, String user_id, String Post_introduction, String post_contents, java.sql.Timestamp post_date, int post_likes, String post_images);
 }

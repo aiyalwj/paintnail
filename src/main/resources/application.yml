@@ -6,6 +6,9 @@ spring:
     username: root
     password: csm123456
 
+#server:
+#  port: 9047
+
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
   type-aliases-package: com.lwj.PaintNail.entity

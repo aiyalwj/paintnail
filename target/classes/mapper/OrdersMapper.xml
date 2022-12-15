@@ -21,11 +21,12 @@
         Project_cost,Indent_start,Manicurist_address,
         Indent_id,Indent_end,User_account
     </sql>
+
     <select id="listCount" resultType="java.lang.Integer">
         select count(DISTINCT User_account)
         from Orders
         where Manicurist_account = #{maccount}
-        and Indent_state = '已预约'
+          and Indent_state = '已预约'
     </select>
     <select id="listOrd1" resultType="com.lwj.PaintNail.entity.Orders">
         select *
@@ -34,7 +35,7 @@
         order by Indent_start desc
     </select>
     <select id="listOrdSim" resultType="com.lwj.PaintNail.entity.Orders">
-        select Manicurist_account,Indent_state,Indent_start,Manicurist_address
+        select Manicurist_account,Indent_state,Time_start,Indent_start,Manicurist_address
         from Orders
         where User_account = #{account}
         order by Indent_start desc
@@ -43,9 +44,7 @@
         select *
         from Orders
         where User_account = #{account}
-        and Indent_start = #{datetime}
+          and Indent_start = #{datetime}
         order by Indent_start desc
     </select>
-
-
 </mapper>

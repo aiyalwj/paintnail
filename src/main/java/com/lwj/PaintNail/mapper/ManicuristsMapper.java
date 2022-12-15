@@ -23,6 +23,8 @@ public interface ManicuristsMapper extends BaseMapper<Manicurists> {
     Manicurists listMstInfo(@Param("mid") String mid);
     List<Projects> listMstPro(@Param("mid") String mid);
     List<Availabletime> listAvaTimeByMId(@Param("mid") String mid);
+
+    List<Manicurists> searchMst(@Param("account") String account);
 }
 
 

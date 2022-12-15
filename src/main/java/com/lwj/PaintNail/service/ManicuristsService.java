@@ -18,4 +18,6 @@ public interface ManicuristsService extends IService<Manicurists> {
     RespBean listMstPro(String id);
     RespBean listAvaTime(String id);
 
+    RespBean searchMst(String maccount);
+
 }
