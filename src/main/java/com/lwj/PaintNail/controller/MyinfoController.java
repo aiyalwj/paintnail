@@ -2,6 +2,8 @@ package com.lwj.PaintNail.controller;
 
 
 import com.lwj.PaintNail.dto.RespBean;
+import com.lwj.PaintNail.entity.Mycollection;
+import com.lwj.PaintNail.service.MycollectionService;
 import com.lwj.PaintNail.service.MyinfoService;
 import com.lwj.PaintNail.service.OrdersService;
 import io.swagger.annotations.Api;
@@ -19,11 +21,19 @@ public class MyinfoController {
     private MyinfoService myinfoService;
     @Autowired
     private OrdersService ordersService;
+    @Autowired
+    private MycollectionService mycollectionService;
 
     @ApiOperation(value = "我的信息界面")
     @RequestMapping(method = RequestMethod.GET)
     public RespBean SelectMyinfoByUId(@RequestParam("User_id") String User_id){
         return myinfoService.SelectMyinfoByUId(User_id);
+    }
+
+    @ApiOperation(value = "我的收藏")
+    @RequestMapping("/MyCollectioin")
+    public RespBean ListAllCollection(@RequestParam("User_id") String User_id){
+        return mycollectionService.ListAllCollection(User_id);
     }
 
     @ApiOperation(value = "列出简略订单信息")
