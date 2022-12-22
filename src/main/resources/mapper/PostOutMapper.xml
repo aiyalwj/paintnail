@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwj.PaintNail.mapper.PostOutMapper">
+
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.PostOut">
+            <result property="postId" column="Post_id" jdbcType="VARCHAR"/>
+            <result property="postIntroduction" column="Post_introduction" jdbcType="VARCHAR"/>
+            <result property="postImages" column="Post_images" jdbcType="VARCHAR"/>
+            <result property="userAccount" column="User_account" jdbcType="VARCHAR"/>
+            <result property="userHeadportrait" column="User_headportrait" jdbcType="VARCHAR"/>
+            <result property="postLikes" column="Post_likes" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Post_id,Post_introduction,Post_images,
+        User_account,User_headportrait,Post_likes
+    </sql>
+    <select id="listAll" resultType="com.lwj.PaintNail.entity.PostOut">
+        select * from Post_out
+    </select>
+</mapper>

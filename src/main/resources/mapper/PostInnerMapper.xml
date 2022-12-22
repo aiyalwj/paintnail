@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwj.PaintNail.mapper.PostInnerMapper">
+
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.PostInner">
+            <result property="userId" column="User_id" jdbcType="VARCHAR"/>
+            <result property="userAccount" column="User_account" jdbcType="VARCHAR"/>
+            <result property="postDate" column="Post_date" jdbcType="TIMESTAMP"/>
+            <result property="userHeadportrait" column="User_headportrait" jdbcType="VARCHAR"/>
+            <result property="postId" column="Post_id" jdbcType="VARCHAR"/>
+            <result property="postImages" column="Post_images" jdbcType="VARCHAR"/>
+            <result property="postIntroduction" column="Post_introduction" jdbcType="VARCHAR"/>
+            <result property="postContents" column="Post_contents" jdbcType="VARCHAR"/>
+            <result property="postLikes" column="Post_likes" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        User_id,User_account,Post_date,
+        User_headportrait,Post_id,Post_images,
+        Post_introduction,Post_contents,Post_likes
+    </sql>
+    <select id="selectByPostId" resultType="com.lwj.PaintNail.entity.PostInner">
+        select * from Post_inner where Post_id = #{Post_id}
+    </select>
+</mapper>
