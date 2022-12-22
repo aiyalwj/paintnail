@@ -10,7 +10,7 @@
             <result property="userBackground" column="User_background" jdbcType="VARCHAR"/>
             <result property="userAccount" column="User_account" jdbcType="VARCHAR"/>
             <result property="userSchool" column="User_school" jdbcType="VARCHAR"/>
-        <result property="indentStart" column="Indent_start" jdbcType="TIMESTAMP"/>
+            <result property="indentStart" column="Indent_start" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
