@@ -4,6 +4,8 @@ import com.lwj.PaintNail.entity.Apply;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.sql.Timestamp;
+
 /**
 * @author wz111
 * @description 针对表【Apply】的数据库操作Mapper
@@ -13,6 +15,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ApplyMapper extends BaseMapper<Apply> {
 
+    void ApplybeManuicurist(String Apply_id, String User_id, Timestamp Apply_time, String Apply_video, String Apply_state);
 }
 
 

@@ -16,4 +16,8 @@
         Apply_id,User_id,Apply_time,
         Apply_video,Apply_state
     </sql>
+    <insert id="ApplybeManuicurist">
+        INSERT INTO Apply
+        values(#{Apply_id}, #{User_id}, #{Apply_time}, #{Apply_video}, #{Apply_state})
+    </insert>
 </mapper>

@@ -1,6 +1,9 @@
 package com.lwj.PaintNail.controller;
 
 import com.lwj.PaintNail.dto.RespBean;
+import com.lwj.PaintNail.service.CollectionService;
+import com.lwj.PaintNail.service.PostInnerService;
+import com.lwj.PaintNail.service.PostOutService;
 import com.lwj.PaintNail.service.PostsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,31 +27,31 @@ import static com.lwj.PaintNail.utils.RandomUtils.generateTicket;
 public class CommunityController {
     @Autowired
     private PostsService postsService;
-//    @Autowired
-//    private PostOutService postOutService;
-//    @Autowired
-//    private PostInnerService postInnerService;
-//    @Autowired
-//    private CollectionService collectionService;
+    @Autowired
+    private PostOutService postOutService;
+    @Autowired
+    private PostInnerService postInnerService;
+    @Autowired
+    private CollectionService collectionService;
 
-//    @ApiOperation(value = "展示出社区里的所有帖子")
-//    @RequestMapping(method = RequestMethod.GET)
-//    public RespBean ListAllPosts() {
-//        return postOutService.listAll();
-//    }
-//
-//    @ApiOperation(value = "进入一个帖子")
-//    @RequestMapping("/EnterPost")
-//    public RespBean EnterPost(@RequestParam("Post_id") String Post_id){
-//        return postInnerService.enterPost(Post_id);
-//    }
-//
-//    @ApiOperation(value = "收藏一个帖子")
-//    @RequestMapping("/EnterPost/CollectPost")
-//    public RespBean CollectPost(@RequestParam("Post_id") String Post_id, @RequestParam("User_id") String User_id){
-//        String Collection_id = RandomUtils.generateTicket();
-//        return collectionService.CollectPost(Collection_id, Post_id, User_id);
-//    }
+    @ApiOperation(value = "展示出社区里的所有帖子")
+    @RequestMapping(method = RequestMethod.GET)
+    public RespBean ListAllPosts() {
+        return postOutService.listAll();
+    }
+
+    @ApiOperation(value = "进入一个帖子")
+    @RequestMapping("/EnterPost")
+    public RespBean EnterPost(@RequestParam("Post_id") String Post_id){
+        return postInnerService.enterPost(Post_id);
+    }
+
+    @ApiOperation(value = "收藏一个帖子")
+    @RequestMapping("/EnterPost/CollectPost")
+    public RespBean CollectPost(@RequestParam("Post_id") String Post_id, @RequestParam("User_id") String User_id){
+        String Collection_id = RandomUtils.generateTicket();
+        return collectionService.CollectPost(Collection_id, Post_id, User_id);
+    }
 
     @ApiOperation(value = "给一个帖子点赞")
     @RequestMapping("/LikePost")

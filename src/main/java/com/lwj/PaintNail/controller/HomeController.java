@@ -3,10 +3,7 @@ package com.lwj.PaintNail.controller;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.lwj.PaintNail.dto.RespBean;
 import com.lwj.PaintNail.mapper.IndentsMapper;
-import com.lwj.PaintNail.service.AvaService;
-import com.lwj.PaintNail.service.IndentsService;
-import com.lwj.PaintNail.service.ManicuristsService;
-import com.lwj.PaintNail.service.OrdersService;
+import com.lwj.PaintNail.service.*;
 import com.lwj.PaintNail.utils.Getcurrenttime;
 import com.lwj.PaintNail.utils.RandomUtils;
 import io.swagger.annotations.Api;
@@ -18,7 +15,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
-
 
 @RestController
 @Slf4j
@@ -33,6 +29,9 @@ public class HomeController {
 
     @Autowired
     private IndentsService indentsService;
+
+    @Autowired
+    private IndentsnewService indentsnewService;
     @Autowired
     private AvaService avaService;
 
@@ -98,6 +97,22 @@ public class HomeController {
         java.sql.Timestamp starttime = Getcurrenttime.getDate();//获取当前时间
 
         return indentsService.createIndent(id, tid, pid, mid, Iid, starttime);
+
+    }
+
+    @ApiOperation(value = "预约新")
+    @PostMapping("/OrderNew")
+    @ResponseBody
+    public RespBean startOrderNew(@RequestParam("id") String id,
+                               @RequestParam("tid") String tid,
+                               @RequestParam("pids") String pids,
+                               @RequestParam("mid") String mid){
+        //@RequestParam("Iid") String Iid)
+        //@RequestParam("starttime") @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss") Date starttime){
+        String Iid = RandomUtils.generateTicket();
+        java.sql.Timestamp starttime = Getcurrenttime.getDate();//获取当前时间
+
+        return indentsnewService.createIndent(id, tid, pids, mid, Iid, starttime);
 
     }
 

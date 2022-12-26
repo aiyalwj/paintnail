@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwj.PaintNail.mapper.MycollectionMapper">
+
+    <resultMap id="BaseResultMap" type="com.lwj.PaintNail.entity.Mycollection">
+            <result property="collectionId" column="Collection_id" jdbcType="VARCHAR"/>
+            <result property="postId" column="Post_id" jdbcType="VARCHAR"/>
+            <result property="postIntroduction" column="Post_introduction" jdbcType="VARCHAR"/>
+            <result property="postImages" column="Post_images" jdbcType="VARCHAR"/>
+            <result property="userId" column="User_id" jdbcType="VARCHAR"/>
+            <result property="userAccount" column="User_account" jdbcType="VARCHAR"/>
+            <result property="userHeadportrait" column="User_headportrait" jdbcType="VARCHAR"/>
+            <result property="postLikes" column="Post_likes" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Collection_id,Post_id,Post_introduction,
+        Post_images,User_account,User_headportrait,
+        Post_likes
+    </sql>
+    <select id="listAll" resultType="com.lwj.PaintNail.entity.Mycollection">
+        select * from Mycollection where User_id = #{User_id}
+    </select>
+</mapper>

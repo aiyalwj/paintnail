@@ -12,7 +12,9 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface MyinfoMapper extends BaseMapper<Myinfo> {
+
     Myinfo SelectMyinfoByUId(String User_id);
+
 }
 
 

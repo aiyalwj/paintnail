@@ -32,8 +32,7 @@ public class Indents implements Serializable {
     @TableId(value = "Project_id")
     private String projectId;
 
-    @TableId(value = "Project_idS")
-    private String projectIds;
+
     /**
      * 
      */
@@ -63,6 +62,7 @@ public class Indents implements Serializable {
      * 
      */
     @TableField(value = "Indent_end")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date indentEnd;
 
     /**
@@ -200,21 +200,12 @@ public class Indents implements Serializable {
         this.indentComment = indentComment;
     }
 
-    public String getProjectIds() {
-        return projectIds;
-    }
-
-    public void setProjectIds(String projectIds) {
-        this.projectIds = projectIds;
-    }
-
     @Override
     public String toString() {
         return "Indents{" +
                 "userId='" + userId + '\'' +
                 ", timeId='" + timeId + '\'' +
                 ", projectId='" + projectId + '\'' +
-                ", projectIds='" + projectIds + '\'' +
                 ", manicuristId='" + manicuristId + '\'' +
                 ", indentId='" + indentId + '\'' +
                 ", indentState='" + indentState + '\'' +
